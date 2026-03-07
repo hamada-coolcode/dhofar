@@ -1,0 +1,22 @@
+
+/*Poppins Font*/
+@font-face {
+    font-family: 'Poppins';
+    src: url("../fonts/Poppins.ttf");
+}
+
+/*Pacifico Font*/
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../fonts/Pacifico.ttf");
+}
+
+:root {
+    /*Font Families*/
+    --font-family: "Poppins", sans-serif;
+    --cursive-font-family: "Pacifico", cursive;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}

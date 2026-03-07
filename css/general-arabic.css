@@ -1,0 +1,18 @@
+
+/*Tajawal Font*/
+@font-face {
+    font-family: 'Tajawal';
+    src: url("../fonts/Tajawal.ttf");
+}
+
+/*Ruqaa Font*/
+@font-face {
+    font-family: 'Ruqaa';
+    src: url("../fonts/Ruqaa.ttf");
+}
+
+:root {
+    /*Font Families*/
+    --font-family: "Tajawal", sans-serif;
+    --cursive-font-family: "Ruqaa", cursive;
+}
