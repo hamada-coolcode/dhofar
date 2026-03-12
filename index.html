@@ -1,19 +1,10 @@
-
 <!DOCTYPE html>
-<html
-    x-data="dhofar()"
-    x-bind:language="language"
-    x-bind:data-theme="theme"
-    data-accent="jade"
-> <!-- Assigning general values(theme, language, direction, accent) and assigning it to some attributes.-->
+<html lang="en" dir="ltr" data-theme="light" data-accent="jade">
     <head>
         <!-- Headers -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>The Beauty of Dhofar</title>
-
-        <!-- Links -->
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Styles -->
         <link rel="stylesheet" href="./css/general.css">
@@ -21,253 +12,109 @@
         <link rel="stylesheet" href="./css/index/carousel.css">
         <link rel="stylesheet" href="./css/index/video-sections.css">
 
+        <!-- Google Fonts - Pacifico -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-        <!-- Scripts -->
-        <script src="./js/scripts/alpine-utils.js"></script>
+        <!-- Vue.js 3 CDN -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.min.js"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
     </head>
     <body>
-        <!-- Sidebar Drawer -->
-        <div class="drawer fixed top-0 left-0 z-40">
-            <input id="navbar-drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-side">
-                <label for="navbar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-                <ul class="menu bg-base-200 min-h-full w-80 p-4">
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
-                </ul>
-            </div>
+        <div id="app">
+            <!-- Sidebar Drawer -->
+            <sidebar></sidebar>
+
+            <!-- SVG Sprite -->
+            <svg class="hidden">
+                <use href="./images/svg/sprite.svg#icon-hamburger"></use>
+                <use href="./images/svg/sprite.svg#icon-close"></use>
+                <use href="./images/svg/sprite.svg#icon-more-vertical"></use>
+            </svg>
+
+            <!-- Navigation Bar -->
+            <navbar></navbar>
+
+            <!-- Header -->
+            <header>
+                <!-- Carousel -->
+                <carousel></carousel>
+            </header>
+
+            <main>
+                <view-section></view-section>
+            </main>
         </div>
 
-        <!-- SVG Sprite -->
-        <svg class="hidden">
-            <use href="./images/svg/sprite.svg#icon-hamburger"></use>
-            <use href="./images/svg/sprite.svg#icon-close"></use>
-            <use href="./images/svg/sprite.svg#icon-more-vertical"></use>
-        </svg>
+        <!-- Data -->
+        <script src="./js/vue/data.js"></script>
 
-        <!-- Navigation Bar -->
-        <nav class="navbar bg-base-100 shadow-sm fixed top-0 left-0 right-0 z-50 h-20">
-            <div class="flex-none">
-                <label for="navbar-drawer" class="btn btn-circle swap swap-rotate btn-ghost">
-                    <input type="checkbox" />
-                    <svg class="swap-off h-8 w-8"><use href="./images/svg/sprite.svg#icon-hamburger"/></svg>
-                    <svg class="swap-on h-8 w-8"><use href="./images/svg/sprite.svg#icon-close"/></svg>
-                </label>
-            </div>
-            <div class="flex-1">
-                <a class="btn btn-ghost text-xl" href="./index.html">The Beauty of Dhofar</a>
-            </div>
-            <div class="flex-none">
-                <button class="btn btn-square btn-ghost">
-                    <svg class="h-5 w-5"><use href="./images/svg/sprite.svg#icon-more-vertical"/></svg>
-                </button>
-            </div>
-        </nav>
+        <!-- Components -->
+        <script src="./js/vue/components/Sidebar.js"></script>
+        <script src="./js/vue/components/Navbar.js"></script>
+        <script src="./js/vue/components/Carousel.js"></script>
+        <script src="./js/vue/components/Section.js"></script>
 
-        <!-- Header -->
-        <header>
-            <!-- Carousel -->
-            <div class="carousel">
-                <div class="carousel__list">
-                    <!-- Slide: Khareef -->
-                    <div class="carousel__item">
-                        <img src="./images/index_slider/khareef.png" alt="Khareef Season in Dhofar">
-                        <div class="carousel__item__content">
-                            <div class="carousel__item__title">
-                                Welcome to
-                                <mark>Dhofar</mark>
-                            </div>
-                            <div class="carousel__item__description">
-                                When the monsoon arrives in June, Dhofar transforms into a lush emerald wonderland. Mist-cloaked mountains, cascading waterfalls, and cool breezes turn every trail into a story and every view into a memory.
-                            </div>
-                            <div class="carousel__item__buttons">
-                                <a href="./pages/khareef.html"><button>LEARN MORE</button></a>
-                                <button class="outline">Login</button>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Vue App -->
+        <script>
+            const { createApp } = Vue;
 
-                    <!-- Slide: Mountains -->
-                    <div class="carousel__item">
-                        <img src="./images/index_slider/mountains.jpg" alt="Dhofar Mountains and viewpoints">
-                        <div class="carousel__item__content">
-                            <div class="carousel__item__title">Majestic <mark>Mountains</mark></div>
-                            <div class="carousel__item__description">
-                                From the dramatic cliffs of Jebel Samhan to hidden wadis and caves, Dhofar’s mountains host breathtaking viewpoints, rare wildlife, and timeless hiking routes.
-                            </div>
-                            <div class="carousel__item__buttons">
-                                <a href="./pages/mountains.html"><button>LEARN MORE</button></a>
-                                <button class="outline">Login</button>
-                            </div>
-                        </div>
-                    </div>
+            const app = createApp({
+                data() {
+                    return {
+                        language: 'en',
+                        theme: 'light',
+                        accent: 'jade'
+                    };
+                },
+                mounted() {
+                    this.loadPreferences();
+                },
+                methods: {
+                    loadPreferences() {
+                        const savedTheme = localStorage.getItem('theme');
+                        const savedLanguage = localStorage.getItem('language');
+                        
+                        if (savedTheme) this.theme = savedTheme;
+                        if (savedLanguage) this.language = savedLanguage;
+                        
+                        this.applyPreferences();
+                    },
+                    applyPreferences() {
+                        document.documentElement.setAttribute('data-theme', this.theme);
+                        document.documentElement.setAttribute('data-accent', this.accent);
+                        if (this.language === 'ar') {
+                            document.documentElement.setAttribute('dir', 'rtl');
+                        } else {
+                            document.documentElement.setAttribute('dir', 'ltr');
+                        }
+                    },
+                    setTheme(theme) {
+                        this.theme = theme;
+                        localStorage.setItem('theme', theme);
+                        this.applyPreferences();
+                    },
+                    setLanguage(lang) {
+                        this.language = lang;
+                        localStorage.setItem('language', lang);
+                        this.applyPreferences();
+                    }
+                }
+            });
 
-                    <!-- Slide: Deserts -->
-                    <div class="carousel__item">
-                        <img src="./images/index_slider/deserts.png" alt="The sands of the Empty Quarter in Dhofar">
-                        <div class="carousel__item__content">
-                            <div class="carousel__item__title">Endless <mark>Deserts</mark></div>
-                            <div class="carousel__item__description">
-                                Golden dunes meet serene horizons in the Rub' al Khali. Experience sandboarding by day and stargazing under pristine skies by night.
-                            </div>
-                            <div class="carousel__item__buttons">
-                                <a href="./pages/deserts.html"><button>LEARN MORE</button></a>
-                                <button class="outline">Login</button>
-                            </div>
-                        </div>
-                    </div>
+            // Register components
+            app.component('navbar', Navbar);
+            app.component('sidebar', Sidebar);
+            app.component('carousel', Carousel);
+            app.component('view-section', ViewSection);
 
-                    <!-- Slide: Coasts -->
-                    <div class="carousel__item">
-                        <img src="./images/index_slider/coasts.jpg" alt="Pristine coasts and beaches of Dhofar">
-                        <div class="carousel__item__content">
-                            <div class="carousel__item__title">Azure <mark>Coasts</mark></div>
-                            <div class="carousel__item__description">
-                                Walk along powdery beaches, watch dolphins dance, and witness the thunder of Mughsail blowholes—Dhofar’s coast is a sanctuary by the sea.
-                            </div>
-                            <div class="carousel__item__buttons">
-                                <a href="./pages/coasts.html"><button>LEARN MORE</button></a>
-                                <button class="outline">Login</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide: Urbanicities -->
-                    <div class="carousel__item">
-                        <img src="./images/index_slider/urbancities.png" alt="Salalah city and urban life in Dhofar">
-                        <div class="carousel__item__content">
-                            <div class="carousel__item__title">Vibrant <mark>Urbanicities</mark></div>
-                            <div class="carousel__item__description">
-                                Savor frankincense-scented souqs, modern cafés, and warm Omani hospitality. Salalah blends heritage with a contemporary rhythm.
-                            </div>
-                            <div class="carousel__item__buttons">
-                                <a href="./pages/urbanicities.html"><button>LEARN MORE</button></a>
-                                <button class="outline">Login</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide: Natural Parks -->
-                    <div class="carousel__item">
-                        <img src="./images/index_slider/natural_parks.png" alt="Natural parks and wadis in Dhofar">
-                        <div class="carousel__item__content">
-                            <div class="carousel__item__title">Serene <mark>Natural Parks</mark></div>
-                            <div class="carousel__item__description">
-                                Drift along Wadi Darbat, picnic at Ayn Razat, and scan the cliffs for eagles—Dhofar’s natural parks are pure tranquility.
-                            </div>
-                            <div class="carousel__item__buttons">
-                                <a href="./pages/natural_parks.html"><button>LEARN MORE</button></a>
-                                <button class="outline">Login</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Thumbnail -->
-                <div class="carousel__thumbnail">
-                    <!-- Slide: Khareef -->
-                    <div class="carousel__thumbnail__item">
-                        <img src="./images/index_slider/khareef.png" alt="Khareef Season in Dhofar">
-                        <div class="carousel__thumbnail__item__content">
-                            <div class="carousel__thumbnail__item__title">Khareef</div>
-                            <div class="carousel__thumbnail__item__description"></div>
-                        </div>
-                    </div>
-
-                    <!-- Slide: Mountains -->
-                    <div class="carousel__thumbnail__item">
-                        <img src="./images/index_slider/mountains.jpg" alt="Dhofar Mountains and viewpoints">
-                        <div class="carousel__thumbnail__item__content">
-                            <div class="carousel__thumbnail__item__title">Mountains</div>
-                        </div>
-                    </div>
-
-                    <!-- Slide: Deserts -->
-                    <div class="carousel__thumbnail__item">
-                        <img src="./images/index_slider/deserts.png" alt="The sands of the Empty Quarter in Dhofar">
-                        <div class="carousel__thumbnail__item__content">
-                            <div class="carousel__thumbnail__item__title">Deserts</div>
-                        </div>
-                    </div>
-
-                    <!-- Slide: Coasts -->
-                    <div class="carousel__thumbnail__item">
-                        <img src="./images/index_slider/coasts.jpg" alt="Pristine coasts and beaches of Dhofar">
-                        <div class="carousel__thumbnail__item__content">
-                            <div class="carousel__thumbnail__item__title">Coasts</div>
-                        </div>
-                    </div>
-
-                    <!-- Slide: Urbanicities -->
-                    <div class="carousel__thumbnail__item">
-                        <img src="./images/index_slider/urbancities.png" alt="Salalah city and urban life in Dhofar">
-                        <div class="carousel__thumbnail__item__content">
-                            <div class="carousel__thumbnail__item__title">Urbanicities</div>
-                        </div>
-                    </div>
-
-                    <!-- Slide: Natural Parks -->
-                    <div class="carousel__thumbnail__item">
-                        <img src="./images/index_slider/natural_parks.png" alt="Natural parks and wadis in Dhofar">
-                        <div class="carousel__thumbnail__item__content">
-                            <div class="carousel__thumbnail__item__title">Natural Parks</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel__arrows">
-                    <button id="carousel__prev" aria-label="Previous slide">&lt;</button>
-                    <button id="carousel__next" aria-label="Next slide">&gt;</button>
-                </div>
-
-                <!-- Progress bar (used by carousel.css) -->
-                <div class="time" aria-hidden="true"></div>
-            </div>
-        </header>
-
-        <main>
-            <section>
-                <div class="content">
-                    <div class="content__title">Khareef</div>
-                    <button><a href="#">Explore</a></button>
-                </div>
-            </section>
-            <section>
-                <div class="content">
-                    <div class="content__title">Mountains</div>
-                    <button><a href="#">Explore</a></button>
-                </div>
-            </section>
-            <section>
-                <div class="content">
-                    <div class="content__title">Deserts</div>
-                    <button><a href="#">Explore</a></button>
-                </div>
-            </section>
-            <section>
-                <div class="content">
-                    <div class="content__title">Coasts</div>
-                    <button><a href="#">Explore</a></button>
-                </div>
-            </section>
-            <section>
-                <div class="content">
-                    <div class="content__title">Urban</div>
-                    <button class="content__button"><a href="#">Explore</a></button>
-                </div>
-            </section>
-            <section>
-                <div class="content">
-                    <div class="content__title">Natural Parks</div>
-                    <button class="content__button"><a href="#">Explore</a></button>
-                </div>
-            </section>
-        </main>
-
-        <!-- Carousel script -->
-        <script src="./js/scripts/carousel.js"></script>
-        <script src="./js/scripts/typing.js"></script>
+            // Mount app
+            app.mount('#app');
+        </script>
     </body>
 </html>

@@ -1,8 +1,8 @@
 
 /* carousel */
 .carousel {
-    height: 100vh;
-    margin-top: -80px;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
     width: 100vw;
     overflow: hidden;
     position: relative;
@@ -74,10 +74,11 @@
     line-height: 1.3em;
 }
 .carousel__item__title mark {
-    background: #007a50;
-    color: #fff;
-    padding: 0 0.25em;
-    border-radius: 0.15em;
+    font-family: 'Pacifico', cursive;
+    background: transparent;
+    color: #007a50;
+    padding: 0;
+    border-radius: 0;
 }
 
 .carousel__item__buttons {
@@ -310,4 +311,55 @@
     .carousel__item__content .title {
         font-size: 30px;
     }
+}
+
+/* Main sections below carousel */
+main section,
+.view-sections section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+main section .content,
+.view-sections section .content {
+    text-align: center;
+}
+
+main section .content .content__title,
+.view-sections section .content .content__title {
+    font-size: 5em;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+main section .content button,
+.view-sections section .content button {
+    padding: 15px 40px;
+    font-size: 1.1em;
+    background: linear-gradient(45deg, #007a50, #00a86b);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main section .content button:hover,
+.view-sections section .content button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,122,80,0.3);
+}
+
+main section .content button a,
+.view-sections section .content button a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
