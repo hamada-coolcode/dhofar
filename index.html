@@ -8,7 +8,6 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="./css/general.css">
-        <link rel="stylesheet" href="./css/general-english.css">
         <link rel="stylesheet" href="./css/index/carousel.css">
         <link rel="stylesheet" href="./css/index/video-sections.css">
         <link rel="stylesheet" href="./css/settings.css">
@@ -25,13 +24,6 @@
         <div id="app">
             <!-- Sidebar Drawer -->
             <sidebar></sidebar>
-
-            <!-- SVG Sprite -->
-            <svg class="hidden">
-                <use href="./images/svg/sprite.svg#icon-hamburger"></use>
-                <use href="./images/svg/sprite.svg#icon-close"></use>
-                <use href="./images/svg/sprite.svg#icon-more-vertical"></use>
-            </svg>
 
             <!-- Navigation Bar -->
             <navbar :on-settings-click="openSettings"></navbar>
@@ -59,9 +51,6 @@
             ></settings-modal>
         </div>
 
-        <!-- Data -->
-        <script src="./js/vue/data.js"></script>
-
         <!-- Components -->
         <script src="./js/vue/components/Sidebar.js"></script>
         <script src="./js/vue/components/Navbar.js"></script>
@@ -71,7 +60,7 @@
 
         <!-- Vue App -->
         <script>
-            const { createApp } = Vue;
+            const { createApp, computed } = Vue;
 
             const app = createApp({
                 data() {
@@ -80,6 +69,11 @@
                         theme: 'light',
                         accent: 'jade',
                         isSettingsOpen: false
+                    };
+                },
+                provide() {
+                    return {
+                        language: computed(() => this.language)
                     };
                 },
                 mounted() {
@@ -102,8 +96,10 @@
                         document.documentElement.setAttribute('data-accent', this.accent);
                         if (this.language === 'ar') {
                             document.documentElement.setAttribute('dir', 'rtl');
+                            document.title = 'جمال ظفار';
                         } else {
                             document.documentElement.setAttribute('dir', 'ltr');
+                            document.title = 'The Beauty of Dhofar';
                         }
                     },
                     openSettings() {

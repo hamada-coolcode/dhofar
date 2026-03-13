@@ -406,6 +406,8 @@ main section .content button a,
 
     .carousel__thumbnail__item__title {
         font-size: 12px;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     /* Arrows above thumbnails */

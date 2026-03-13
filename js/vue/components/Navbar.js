@@ -2,11 +2,20 @@
 const Navbar = {
     name: 'Navbar',
     props: ['onSettingsClick'],
+    inject: ['language'],
     data() {
         return {
             isMenuOpen: false,
-            siteTitle: siteConfig.title
+            siteTitle: {
+                en: 'The Beauty of Dhofar',
+                ar: 'جمال ظفار'
+            }
         };
+    },
+    computed: {
+        currentLang() {
+            return this.language?.value || this.language || 'en';
+        }
     },
     mounted() {
         this.$nextTick(() => {
@@ -35,7 +44,7 @@ const Navbar = {
             <div class="flex-1">
                 <a class="btn btn-ghost text-xl" href="./index.html">
                     <i data-lucide="tent" class="h-6 w-6 mr-2"></i>
-                    {{ siteTitle }}
+                    {{ siteTitle[currentLang] }}
                 </a>
             </div>
             <div class="flex-none">

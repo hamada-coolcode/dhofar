@@ -11,6 +11,15 @@
     font-family: 'Poppins';
     src: url("../fonts/Poppins.ttf");
 }
+/* Arabic Fonts */
+@font-face {
+    font-family: 'Tajawal';
+    src: url("../fonts/Tajawal.ttf");
+}
+@font-face {
+    font-family: 'Ruqaa';
+    src: url("../fonts/Ruqaa.ttf");
+}
 /* CSS Variables */
 :root {
     /* Font Families */
@@ -206,6 +215,12 @@
 [data-accent="slate"] {
     --current-accent-color: var(--slate-accent-color);
     --current-accent-color-hover: var(--slate-accent-color-hover);
+}
+
+/* RTL (Arabic) Support */
+[dir="rtl"] {
+    --font-family-body: "Tajawal", sans-serif;
+    --cursive-font-family: "Ruqaa", cursive;
 }
 
 /* Global Styles */

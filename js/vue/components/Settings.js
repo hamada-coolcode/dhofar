@@ -10,30 +10,30 @@ const Settings = {
                 { code: 'ar', name: 'Arabic', nativeName: 'العربية' }
             ],
             themes: [
-                { id: 'light', name: 'Light', icon: 'sun' },
-                { id: 'dark', name: 'Dark', icon: 'moon' }
+                { id: 'light', name: { en: 'Light', ar: 'فاتح' }, icon: 'sun' },
+                { id: 'dark', name: { en: 'Dark', ar: 'داكن' }, icon: 'moon' }
             ],
             accents: [
-                { id: 'red', name: 'Red', color: '#c52f21' },
-                { id: 'pink', name: 'Pink', color: '#d92662' },
-                { id: 'fushcia', name: 'Fushcia', color: '#c1208b' },
-                { id: 'purple', name: 'Purple', color: '#9236a4' },
-                { id: 'violet', name: 'Violet', color: '#7540bf' },
-                { id: 'indigo', name: 'Indigo', color: '#524ed2' },
-                { id: 'blue', name: 'Blue', color: '#2060df' },
-                { id: 'azure', name: 'Azure', color: '#01aaff' },
-                { id: 'cyan', name: 'Cyan', color: '#047878' },
-                { id: 'jade', name: 'Jade', color: '#007a50' },
-                { id: 'green', name: 'Green', color: '#398712' },
-                { id: 'lime', name: 'Lime', color: '#a5d601' },
-                { id: 'yellow', name: 'Yellow', color: '#f2df0d' },
-                { id: 'amber', name: 'Amber', color: '#ffbf00' },
-                { id: 'pumpkin', name: 'Pumpkin', color: '#ff9500' },
-                { id: 'orange', name: 'Orange', color: '#d24317' },
-                { id: 'sand', name: 'Sand', color: '#ccc6b4' },
-                { id: 'grey', name: 'Grey', color: '#ababab' },
-                { id: 'zinc', name: 'Zinc', color: '#646b79' },
-                { id: 'slate', name: 'Slate', color: '#525f7a' }
+                { id: 'red', name: { en: 'Red', ar: 'أحمر' }, color: '#c52f21' },
+                { id: 'pink', name: { en: 'Pink', ar: 'وردي' }, color: '#d92662' },
+                { id: 'fushcia', name: { en: 'Fushcia', ar: 'فوشيا' }, color: '#c1208b' },
+                { id: 'purple', name: { en: 'Purple', ar: 'أرجواني' }, color: '#9236a4' },
+                { id: 'violet', name: { en: 'Violet', ar: 'بنفسجي' }, color: '#7540bf' },
+                { id: 'indigo', name: { en: 'Indigo', ar: 'نيلي' }, color: '#524ed2' },
+                { id: 'blue', name: { en: 'Blue', ar: 'أزرق' }, color: '#2060df' },
+                { id: 'azure', name: { en: 'Azure', ar: 'أزرق سماوي' }, color: '#01aaff' },
+                { id: 'cyan', name: { en: 'Cyan', ar: 'سماوي' }, color: '#047878' },
+                { id: 'jade', name: { en: 'Jade', ar: 'يشب' }, color: '#007a50' },
+                { id: 'green', name: { en: 'Green', ar: 'أخضر' }, color: '#398712' },
+                { id: 'lime', name: { en: 'Lime', ar: 'ليموني' }, color: '#a5d601' },
+                { id: 'yellow', name: { en: 'Yellow', ar: 'أصفر' }, color: '#f2df0d' },
+                { id: 'amber', name: { en: 'Amber', ar: 'عنبري' }, color: '#ffbf00' },
+                { id: 'pumpkin', name: { en: 'Pumpkin', ar: 'برتقالي داكن' }, color: '#ff9500' },
+                { id: 'orange', name: { en: 'Orange', ar: 'برتقالي' }, color: '#d24317' },
+                { id: 'sand', name: { en: 'Sand', ar: 'رملي' }, color: '#ccc6b4' },
+                { id: 'grey', name: { en: 'Grey', ar: 'رمادي' }, color: '#ababab' },
+                { id: 'zinc', name: { en: 'Zinc', ar: 'زنك' }, color: '#646b79' },
+                { id: 'slate', name: { en: 'Slate', ar: 'أزرق رمادي' }, color: '#525f7a' }
             ],
             modalTitles: {
                 en: 'Settings',
@@ -121,14 +121,14 @@ const Settings = {
                 <div class="mb-6">
                     <h4 class="text-sm font-semibold uppercase text-base-content/70 mb-3">{{ currentSectionTitles.theme }}</h4>
                     <div class="grid grid-cols-2 gap-3">
-                        <button 
-                            v-for="theme in themes" 
+                        <button
+                            v-for="theme in themes"
                             :key="theme.id"
                             @click="selectTheme(theme.id)"
                             :class="['btn', currentTheme === theme.id ? 'btn-primary' : 'btn-outline']"
                         >
                             <i :data-lucide="theme.icon" class="h-5 w-5 mr-2"></i>
-                            {{ theme.name }}
+                            {{ theme.name[currentLanguage] }}
                         </button>
                     </div>
                 </div>
@@ -137,16 +137,17 @@ const Settings = {
                 <div>
                     <h4 class="text-sm font-semibold uppercase text-base-content/70 mb-3">{{ currentSectionTitles.accent }}</h4>
                     <div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
-                        <button 
-                            v-for="accent in accents" 
+                        <button
+                            v-for="accent in accents"
                             :key="accent.id"
                             @click="selectAccent(accent.id)"
                             class="btn btn-sm w-full h-10 p-0 relative"
                             :style="{ backgroundColor: accent.color }"
                             :class="currentAccent === accent.id ? 'ring-2 ring-offset-2 ring-primary' : ''"
+                            :aria-label="accent.name[currentLanguage]"
                         >
-                            <i v-if="currentAccent === accent.id" 
-                                data-lucide="check" 
+                            <i v-if="currentAccent === accent.id"
+                                data-lucide="check"
                                 class="h-4 w-4"
                                 :style="{ color: getContrastColor(accent.color) }"></i>
                         </button>
