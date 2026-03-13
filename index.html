@@ -39,14 +39,12 @@
             </main>
 
             <!-- Settings Modal -->
-            <settings-modal 
-                :is-open="isSettingsOpen" 
+            <settings-modal
+                :is-open="isSettingsOpen"
                 :current-language="language"
-                :current-theme="theme"
                 :current-accent="accent"
                 @close="closeSettings"
                 @update:language="setLanguage"
-                @update:theme="setTheme"
                 @update:accent="setAccent"
             ></settings-modal>
         </div>
@@ -66,8 +64,7 @@
                 data() {
                     return {
                         language: 'en',
-                        theme: 'light',
-                        accent: 'jade',
+                        accent: 'dark',
                         isSettingsOpen: false
                     };
                 },
@@ -81,19 +78,17 @@
                 },
                 methods: {
                     loadPreferences() {
-                        const savedTheme = localStorage.getItem('theme');
                         const savedLanguage = localStorage.getItem('language');
                         const savedAccent = localStorage.getItem('accent');
 
-                        if (savedTheme) this.theme = savedTheme;
                         if (savedLanguage) this.language = savedLanguage;
                         if (savedAccent) this.accent = savedAccent;
 
                         this.applyPreferences();
                     },
                     applyPreferences() {
-                        document.documentElement.setAttribute('data-theme', this.theme);
-                        document.documentElement.setAttribute('data-accent', this.accent);
+                        // Apply theme (light/dark mode)
+                        document.documentElement.setAttribute('data-theme', this.accent);
                         if (this.language === 'ar') {
                             document.documentElement.setAttribute('dir', 'rtl');
                             document.title = 'جمال ظفار';
@@ -107,11 +102,6 @@
                     },
                     closeSettings() {
                         this.isSettingsOpen = false;
-                    },
-                    setTheme(theme) {
-                        this.theme = theme;
-                        localStorage.setItem('theme', theme);
-                        this.applyPreferences();
                     },
                     setLanguage(lang) {
                         this.language = lang;

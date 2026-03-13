@@ -63,6 +63,16 @@
     text-align: right;
 }
 
+/* Selected accent color indicator */
+.selected-accent {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8) inset,
+                0 0 0 2px #000 !important;
+}
+
+.selected-accent:hover {
+    opacity: 0.9;
+}
+
 /* Responsive adjustments */
 @media (max-width: 640px) {
     .settings-modal-box {
