@@ -368,3 +368,51 @@ main section .content button a,
     letter-spacing: 2px;
     font-weight: 600;
 }
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+   ======================================== */
+
+@media screen and (max-width: 640px) {
+    /* Push content down to make room for thumbnails */
+    .carousel__item__content {
+        top: 15%;
+        padding-right: 0;
+    }
+
+    .carousel__item__title {
+        font-size: 4.25em;
+    }
+
+    .carousel__item__description {
+        font-size: 1em;
+    }
+
+    .carousel__item__buttons .btn {
+        height: 60px;
+        font-size: 0.9em;
+    }
+
+    /* Smaller thumbnails on mobile */
+    .carousel__thumbnail {
+        bottom: 20px;
+        gap: 10px;
+    }
+
+    .carousel__thumbnail__item {
+        width: 80px;
+        height: 120px;
+    }
+
+    .carousel__thumbnail__item__title {
+        font-size: 12px;
+    }
+
+    /* Arrows above thumbnails */
+    .carousel__arrows {
+        bottom: 150px;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

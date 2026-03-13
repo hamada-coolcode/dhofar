@@ -125,9 +125,6 @@ const Carousel = {
                 <button @click="prev" aria-label="Previous slide" class="btn btn-circle btn-sm">&lt;</button>
                 <button @click="next" aria-label="Next slide" class="btn btn-circle btn-sm">&gt;</button>
             </div>
-
-            <!-- Progress bar -->
-            <div class="time" aria-hidden="true"></div>
         </div>
     `
 };
