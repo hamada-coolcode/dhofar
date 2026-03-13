@@ -1,10 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Beauty of Mountains</title>
+
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/settings.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+<div id="app">
+    <!-- Sidebar Drawer -->
+    <sidebar :is-index-page="false"></sidebar>
 
+    <!-- Navigation Bar -->
+    <navbar :on-settings-click="openSettings"></navbar>
+
+    <!-- Settings Modal -->
+    <settings-modal
+            :is-open="isSettingsOpen"
+            :current-language="language"
+            :current-accent="accent"
+            @close="closeSettings"
+            @update:language="setLanguage"
+            @update:accent="setAccent"
+    ></settings-modal>
+
+    <main class="pt-20">
+        <h1 class="text-3xl font-bold text-center">Mountains</h1>
+    </main>
+</div>
+
+<!-- Components -->
+<script src="../js/vue/components/Sidebar.js"></script>
+<script src="../js/vue/components/Navbar.js"></script>
+<script src="../js/vue/components/Settings.js"></script>
+
+<!-- Vue App -->
+<script>
+    const {createApp, computed} = Vue;
+
+    const app = createApp({
+        data() {
+            return {
+                language: 'en',
+                accent: 'dark',
+                isSettingsOpen: false
+            };
+        },
+        provide() {
+            return {
+                language: computed(() => this.language)
+            };
+        },
+        mounted() {
+            this.loadPreferences();
+        },
+        methods: {
+            loadPreferences() {
+                const savedLanguage = localStorage.getItem('language');
+                const savedAccent = localStorage.getItem('accent');
+
+                if (savedLanguage) this.language = savedLanguage;
+                if (savedAccent) this.accent = savedAccent;
+
+                this.applyPreferences();
+            },
+            applyPreferences() {
+                // Apply theme (light/dark mode)
+                document.documentElement.setAttribute('data-theme', this.accent);
+                if (this.language === 'ar') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    document.title = 'جمال ظفار';
+                } else {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.title = 'The Beauty of Dhofar';
+                }
+            },
+            openSettings() {
+                this.isSettingsOpen = true;
+            },
+            closeSettings() {
+                this.isSettingsOpen = false;
+            },
+            setLanguage(lang) {
+                this.language = lang;
+                localStorage.setItem('language', lang);
+                this.applyPreferences();
+            },
+            setAccent(accent) {
+                this.accent = accent;
+                localStorage.setItem('accent', accent);
+                this.applyPreferences();
+            }
+        }
+    });
+
+    // Register components
+    app.component('navbar', Navbar);
+    app.component('sidebar', Sidebar);
+    app.component('settings-modal', Settings);
+
+    // Mount app
+    app.mount('#app');
+</script>
 </body>
 </html>

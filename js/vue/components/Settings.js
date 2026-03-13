@@ -31,6 +31,18 @@ const Settings = {
             return this.sectionTitles[this.currentLanguage] || this.sectionTitles.en;
         }
     },
+    watch: {
+        isOpen(newVal) {
+            this.$nextTick(() => {
+                const modal = this.$el;
+                if (newVal) {
+                    modal.showModal();
+                } else {
+                    modal.close();
+                }
+            });
+        }
+    },
     mounted() {
         this.$nextTick(() => {
             lucide.createIcons();
@@ -50,16 +62,11 @@ const Settings = {
         },
         closeModal() {
             this.$emit('close');
-        },
-        handleBackdropClick(event) {
-            if (event.target === event.currentTarget) {
-                this.closeModal();
-            }
         }
     },
     template: `
-        <div v-if="isOpen" class="settings-modal" @click="handleBackdropClick">
-            <div class="settings-modal-box bg-base-100 rounded-box shadow-xl p-6 w-11/12 max-w-2xl">
+        <dialog class="modal" :class="{'modal-open': isOpen}">
+            <div class="modal-box bg-base-100">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="font-bold text-2xl">{{ currentModalTitle }}</h3>
                     <button @click="closeModal" class="btn btn-ghost btn-sm btn-circle">
@@ -98,6 +105,9 @@ const Settings = {
                     </div>
                 </div>
             </div>
-        </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
     `
 };
