@@ -1,6 +1,7 @@
 // Navbar Component
 const Navbar = {
     name: 'Navbar',
+    props: ['onSettingsClick'],
     data() {
         return {
             isMenuOpen: false,
@@ -23,7 +24,7 @@ const Navbar = {
         }
     },
     template: `
-        <nav class="navbar bg-base-100 shadow-sm fixed top-0 left-0 right-0 z-50 h-20">
+        <nav class="navbar bg-base-100 shadow-sm fixed top-0 left-0 right-0 z-[var(--z-navbar)]" :style="{ height: 'var(--navbar-height)' }">
             <div class="flex-none">
                 <label for="navbar-drawer" class="btn btn-circle swap swap-rotate btn-ghost">
                     <input type="checkbox" v-model="isMenuOpen" />
@@ -38,7 +39,7 @@ const Navbar = {
                 </a>
             </div>
             <div class="flex-none">
-                <button class="btn btn-square btn-ghost">
+                <button @click="onSettingsClick" class="btn btn-square btn-ghost">
                     <i data-lucide="settings" class="h-5 w-5"></i>
                 </button>
             </div>

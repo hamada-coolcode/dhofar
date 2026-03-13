@@ -1,3 +1,59 @@
+// Carousel Slide Translations
+const carouselTranslations = {
+    en: {
+        khareef: {
+            heading: 'Welcome to <mark>Dhofar</mark>',
+            description: 'When the monsoon arrives in June, Dhofar transforms into a lush emerald wonderland. Mist-cloaked mountains, cascading waterfalls, and cool breezes turn every trail into a story and every view into a memory.'
+        },
+        mountains: {
+            heading: 'Majestic <br><mark>Mountains</mark>',
+            description: 'From the dramatic cliffs of Jebel Samhan to hidden wadis and caves, Dhofar\'s mountains host breathtaking viewpoints, rare wildlife, and timeless hiking routes.'
+        },
+        deserts: {
+            heading: 'Endless <br><mark>Deserts</mark>',
+            description: 'Golden dunes meet serene horizons in the Rub\' al Khali. Experience sandboarding by day and stargazing under pristine skies by night.'
+        },
+        coasts: {
+            heading: 'Azure <br><mark>Coasts</mark>',
+            description: 'Walk along powdery beaches, watch dolphins dance, and witness the thunder of Mughsail blowholes—Dhofar\'s coast is a sanctuary by the sea.'
+        },
+        urbanicities: {
+            heading: 'Vibrant <mark>Urbanicities</mark>',
+            description: 'Savor frankincense-scented souqs, modern cafés, and warm Omani hospitality. Salalah blends heritage with a contemporary rhythm.'
+        },
+        natural_parks: {
+            heading: 'Serene <br><mark>Natural <br>Parks</mark>',
+            description: 'Drift along Wadi Darbat, picnic at Ayn Razat, and scan the cliffs for eagles—Dhofar\'s natural parks are pure tranquility.'
+        }
+    },
+    ar: {
+        khareef: {
+            heading: 'مرحباً بكم في <mark>ظفار</mark>',
+            description: 'عندما يصل الخريف في يونيو، تتحول ظفار إلى أرض خضراء مورقة. جبال مغطاة بالضباب، شلالات متدفقة، ونسيم بارد يحول كل مسار إلى قصة وكل منظر إلى ذكرى.'
+        },
+        mountains: {
+            heading: 'جبال <br><mark>مهـيبة</mark>',
+            description: 'من المنحدرات الدراماتيكية لجبل سمحان إلى الأودية والكهوف المخفية، تضم جبال ظفار مناظر خلابة، وحياة برية نادرة، وطرق مشي خالدة.'
+        },
+        deserts: {
+            heading: 'صحاري <br><mark>لا متناهية</mark>',
+            description: 'تلتقي الكثبان الذهبية بالأفق serene في الربع الخالي. جرب التزلج على الرمال نهاراً وتأمل النجوم تحت سماء صافية ليلاً.'
+        },
+        coasts: {
+            heading: 'سواحل <br><mark>فيروزية</mark>',
+            description: 'تمشى على طول الشواطئ الرملية، شاهد الدلافين وهي ترقص، واشهد هدير فجوات مغسيل - ساحل ظفار هو ملاذ بجانب البحر.'
+        },
+        urbanicities: {
+            heading: '<mark>مدن</mark> نابضة بالحياة',
+            description: 'تذوق أسواق اللبان العطرة، والمقاهي العصرية، والضيافة العمانية الدافئة. صلالة تمزج التراث بإيقاع معاصر.'
+        },
+        natural_parks: {
+            heading: 'حدائق <br><mark>طبيعية</mark> هادئة',
+            description: 'تجول على طول وادي دربات، تنزه في عين رزات، وراقب المنحدرات بحثاً عن النسور - حدائق ظفار الطبيعية هي نقاء الهدوء.'
+        }
+    }
+};
+
 // Carousel Slide Data
 const carouselSlides = [
     {
@@ -6,8 +62,6 @@ const carouselSlides = [
         title: 'Khareef',
         image: './images/index_slider/khareef.png',
         thumbnail: './images/index_slider/khareef.png',
-        heading: 'Welcome to <mark>Dhofar</mark>',
-        description: 'When the monsoon arrives in June, Dhofar transforms into a lush emerald wonderland. Mist-cloaked mountains, cascading waterfalls, and cool breezes turn every trail into a story and every view into a memory.',
         link: './pages/khareef.html'
     },
     {
@@ -16,8 +70,6 @@ const carouselSlides = [
         title: 'Mountains',
         image: './images/index_slider/mountains.jpg',
         thumbnail: './images/index_slider/mountains.jpg',
-        heading: 'Majestic <br><mark>Mountains</mark>',
-        description: 'From the dramatic cliffs of Jebel Samhan to hidden wadis and caves, Dhofar\'s mountains host breathtaking viewpoints, rare wildlife, and timeless hiking routes.',
         link: './pages/mountains.html'
     },
     {
@@ -26,8 +78,6 @@ const carouselSlides = [
         title: 'Deserts',
         image: './images/index_slider/deserts.png',
         thumbnail: './images/index_slider/deserts.png',
-        heading: 'Endless <br><mark>Deserts</mark>',
-        description: 'Golden dunes meet serene horizons in the Rub\' al Khali. Experience sandboarding by day and stargazing under pristine skies by night.',
         link: './pages/deserts.html'
     },
     {
@@ -36,8 +86,6 @@ const carouselSlides = [
         title: 'Coasts',
         image: './images/index_slider/coasts.jpg',
         thumbnail: './images/index_slider/coasts.jpg',
-        heading: 'Azure <br><mark>Coasts</mark>',
-        description: 'Walk along powdery beaches, watch dolphins dance, and witness the thunder of Mughsail blowholes—Dhofar\'s coast is a sanctuary by the sea.',
         link: './pages/coasts.html'
     },
     {
@@ -46,8 +94,6 @@ const carouselSlides = [
         title: 'Urbanicities',
         image: './images/index_slider/urbancities.png',
         thumbnail: './images/index_slider/urbancities.png',
-        heading: 'Vibrant <mark>Urbanicities</mark>',
-        description: 'Savor frankincense-scented souqs, modern cafés, and warm Omani hospitality. Salalah blends heritage with a contemporary rhythm.',
         link: './pages/urbanicities.html'
     },
     {
@@ -56,8 +102,6 @@ const carouselSlides = [
         title: 'Natural Parks',
         image: './images/index_slider/natural_parks.png',
         thumbnail: './images/index_slider/natural_parks.png',
-        heading: 'Serene <br><mark>Natural <br>Parks</mark>',
-        description: 'Drift along Wadi Darbat, picnic at Ayn Razat, and scan the cliffs for eagles—Dhofar\'s natural parks are pure tranquility.',
         link: './pages/natural_parks.html'
     }
 ];

@@ -1,0 +1,72 @@
+/* Settings Modal Styles */
+/* Note: Using custom modal classes to avoid DaisyUI collision */
+
+.settings-modal {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal, 9999);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.settings-modal-box {
+    animation: slideIn 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar styling for modal */
+.settings-modal-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.settings-modal-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.settings-modal-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.settings-modal-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* RTL support for modal */
+[dir="rtl"] .settings-modal-box {
+    text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .settings-modal-box {
+        width: 95%;
+        max-height: 95vh;
+    }
+}

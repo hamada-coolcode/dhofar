@@ -1,12 +1,12 @@
 
 /* carousel */
 .carousel {
-    height: calc(100vh - 80px);
-    margin-top: 80px;
+    height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
     width: 100vw;
     overflow: hidden;
     position: relative;
-    z-index: 0;
+    z-index: var(--z-base, 10);
 }
 .carousel__item {
     width: 100%;
@@ -35,7 +35,6 @@
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    background: transparent;
     background: rgba(0, 0, 0, 0.45);
 }
 
@@ -50,7 +49,7 @@
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
-    z-index: 200; /* above overlay */
+    z-index: var(--z-content-overlay, 70);
 }
 /* Prevent multiple slide headings stacking: hide non-active slide content */
 .carousel__item .carousel__item__content {
@@ -76,7 +75,7 @@
 .carousel__item__title mark {
     font-family: 'Pacifico', cursive;
     background: transparent;
-    color: #007a50;
+    color: #ffeb7d;
     padding: 0;
     border-radius: 0;
 }
@@ -87,17 +86,10 @@
     gap: 5px;
     margin-top: 20px;
 }
-.carousel__item__buttons button{
+.carousel__item__buttons .btn {
     height: 80px;
-    border: none;
-    background-color: #eee;
     letter-spacing: 3px;
     font-weight: 500;
-}
-.carousel__item__buttons button:nth-child(2){
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #eee;
 }
 /* thumbail */
 .carousel__thumbnail {
@@ -105,7 +97,7 @@
     bottom: 50px;
     left: 50%;
     width: max-content;
-    z-index: 100;
+    z-index: var(--z-thumbnail, 60);
     display: flex;
     gap: 20px;
 }
@@ -138,39 +130,34 @@
     position: absolute;
     top: 80%;
     right: 52%;
-    z-index: 100;
+    z-index: var(--z-carousel-controls, 100);
     width: 300px;
     max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
 }
-.carousel__arrows button{
+.carousel__arrows .btn {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
     background-color: #eee4;
-    border: none;
     color: #fff;
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
-    line-height: 1px;
-    padding: 0;
 }
-.carousel__arrows button:hover{
+.carousel__arrows .btn:hover{
     background-color: #fff;
     color: #000;
 }
 
 /* animation */
 .carousel__item:nth-child(1){
-    z-index: 1;
+    z-index: 2;
 }
 
-/* animation text in first item */
+/* animation text in first item - description and buttons only */
 
-.carousel__item:nth-child(1) .carousel__item__content .carousel__item__title,
 .carousel__item:nth-child(1) .carousel__item__content .carousel__item__description,
 .carousel__item:nth-child(1) .carousel__item__content .carousel__item__buttons
 {
@@ -186,14 +173,32 @@
         opacity: 1;
     }
 }
-.carousel__item:nth-child(1) .carousel__item__content .carousel__item__title {
-    animation-delay: 1.2s!important;
-}
 .carousel__item:nth-child(1) .carousel__item__content .carousel__item__description {
     animation-delay: 1.4s!important;
 }
 .carousel__item:nth-child(1) .carousel__item__content .carousel__item__buttons {
     animation-delay: 1.6s!important;
+}
+/* Title is always visible for TypeIt */
+.carousel__item:nth-child(1) .carousel__item__content .carousel__item__title {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    filter: none;
+    animation: none;
+}
+/* Hide title during slide transition */
+.carousel.next .carousel__list .carousel__item:nth-child(1) .carousel__item__title,
+.carousel.prev .carousel__list .carousel__item:nth-child(1) .carousel__item__title {
+    opacity: 0;
+}
+/* Also hide description and buttons during transition */
+.carousel.next .carousel__list .carousel__item:nth-child(1) .carousel__item__description,
+.carousel.next .carousel__list .carousel__item:nth-child(1) .carousel__item__buttons,
+.carousel.prev .carousel__list .carousel__item:nth-child(1) .carousel__item__description,
+.carousel.prev .carousel__list .carousel__item:nth-child(1) .carousel__item__buttons {
+    opacity: 0;
+    animation: none;
 }
 /* create animation when next click */
 .carousel.next .carousel__item:nth-child(1) img {
@@ -240,7 +245,7 @@
 
 .carousel .time{
     position: absolute;
-    z-index: 1000;
+    z-index: var(--z-modal, 9999);
     width: 0%;
     height: 3px;
     background-color: #f1683a;

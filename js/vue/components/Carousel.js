@@ -1,12 +1,25 @@
 // Carousel Component
 const Carousel = {
     name: 'Carousel',
+    props: ['language'],
     data() {
         return {
             slides: [...carouselSlides],
             isTransitioning: false,
             transitionTime: 500
         };
+    },
+    computed: {
+        translatedSlides() {
+            return this.slides.map(slide => {
+                const translation = carouselTranslations[this.language]?.[slide.key] || carouselTranslations.en[slide.key];
+                return {
+                    ...slide,
+                    heading: translation.heading,
+                    description: translation.description
+                };
+            });
+        }
     },
     mounted() {
         this.setupCarousel();
@@ -19,36 +32,28 @@ const Carousel = {
             this.thumbnailDom = this.$el.querySelector('.carousel__thumbnail');
         },
         initTyping() {
-            // Initialize TypeIt on first slide title
             this.$nextTick(() => {
-                const titleEl = this.sliderDom.querySelector('.carousel__item:nth-child(1) .carousel__item__title');
+                const titleEl = this.sliderDom.querySelector('.carousel__list > .carousel__item:nth-child(1) .carousel__item__title');
                 if (!titleEl || titleEl.dataset.typed === '1') return;
 
                 const original = titleEl.innerHTML;
                 titleEl.dataset.text = original;
+                titleEl.dataset.typed = '1';
 
-                // Create target span for TypeIt
-                titleEl.innerHTML = '<span class="ti-target"></span>';
-                const target = titleEl.querySelector('.ti-target');
-                if (!target) return;
+                // Clear title and start typing immediately
+                const targetSpan = document.createElement('span');
+                targetSpan.className = 'ti-target';
+                titleEl.innerHTML = '';
+                titleEl.appendChild(targetSpan);
 
-                const placeholders = ['Lorem ipsum', 'Typing...', 'Loading title', 'Preparing...', 'Please wait'];
-                const ph = placeholders[Math.floor(Math.random() * placeholders.length)];
-
-                new TypeIt(target, {
-                    speed: 40,
+                new TypeIt(targetSpan, {
+                    speed: 50,
                     cursor: true,
                     lifeLike: true,
                     waitUntilVisible: false,
                 })
-                .type(ph)
-                .pause(2000)
-                .delete(ph.length)
-                .pause(150)
                 .type(original)
                 .go();
-
-                titleEl.dataset.typed = '1';
             });
         },
         next() {
@@ -81,7 +86,11 @@ const Carousel = {
                 this.carouselEl.classList.remove('prev');
                 this.isTransitioning = false;
                 
-                // Re-init typing animation for new active slide
+                // Reset typed flag and start typing on new slide
+                const titleEl = this.sliderDom.querySelector('.carousel__list > .carousel__item:nth-child(1) .carousel__item__title');
+                if (titleEl) {
+                    titleEl.dataset.typed = '0';
+                }
                 this.initTyping();
             }, this.transitionTime);
         }
@@ -89,13 +98,13 @@ const Carousel = {
     template: `
         <div class="carousel">
             <div class="carousel__list">
-                <div v-for="(slide, index) in slides" :key="index" class="carousel__item">
+                <div v-for="(slide, index) in translatedSlides" :key="index" class="carousel__item">
                     <img :src="slide.image" :alt="slide.title">
                     <div class="carousel__item__content">
                         <div class="carousel__item__title" v-html="slide.heading"></div>
                         <div class="carousel__item__description">{{ slide.description }}</div>
                         <div class="carousel__item__buttons">
-                            <a :href="slide.link"><button class="btn">LEARN MORE</button></a>
+                            <a :href="slide.link"><button class="btn btn-outline">LEARN MORE</button></a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +112,7 @@ const Carousel = {
 
             <!-- Thumbnail -->
             <div class="carousel__thumbnail">
-                <div v-for="(slide, index) in slides" :key="index" class="carousel__thumbnail__item">
+                <div v-for="(slide, index) in translatedSlides" :key="index" class="carousel__thumbnail__item">
                     <img :src="slide.thumbnail" :alt="slide.title">
                     <div class="carousel__thumbnail__item__content">
                         <div class="carousel__thumbnail__item__title">{{ slide.title }}</div>
@@ -113,8 +122,8 @@ const Carousel = {
 
             <!-- Arrows -->
             <div class="carousel__arrows">
-                <button @click="prev" aria-label="Previous slide">&lt;</button>
-                <button @click="next" aria-label="Next slide">&gt;</button>
+                <button @click="prev" aria-label="Previous slide" class="btn btn-circle btn-sm">&lt;</button>
+                <button @click="next" aria-label="Next slide" class="btn btn-circle btn-sm">&gt;</button>
             </div>
 
             <!-- Progress bar -->

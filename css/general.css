@@ -3,10 +3,20 @@
     font-family: 'Impact';
     src: url("../fonts/Impact.ttf");
 }
+@font-face {
+    font-family: 'Pacifico';
+    src: url("../fonts/Pacifico.ttf");
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url("../fonts/Poppins.ttf");
+}
 /* CSS Variables */
 :root {
     /* Font Families */
     --font-family-display: "Impact", display;
+    --font-family-body: "Poppins", sans-serif;
+    --cursive-font-family: "Pacifico", cursive;
 
     /* Font Size */
     --font-size: 100%;
@@ -22,6 +32,19 @@
 
     /* Border Radius */
     --border-radius: 0.25rem;
+
+    /* Z-Index Scale */
+    --z-base: 10;
+    --z-dropdown: 20;
+    --z-sticky: 30;
+    --z-navbar: 40;
+    --z-carousel-controls: 50;
+    --z-thumbnail: 60;
+    --z-content-overlay: 70;
+    --z-modal: 9999;
+
+    /* Navbar Height */
+    --navbar-height: 5rem;
 
     /* Accent Colors */
     /*red*/
@@ -183,4 +206,9 @@
 [data-accent="slate"] {
     --current-accent-color: var(--slate-accent-color);
     --current-accent-color-hover: var(--slate-accent-color-hover);
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family-body);
 }

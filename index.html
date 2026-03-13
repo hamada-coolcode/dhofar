@@ -11,11 +11,7 @@
         <link rel="stylesheet" href="./css/general-english.css">
         <link rel="stylesheet" href="./css/index/carousel.css">
         <link rel="stylesheet" href="./css/index/video-sections.css">
-
-        <!-- Google Fonts - Pacifico -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/settings.css">
 
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -38,17 +34,29 @@
             </svg>
 
             <!-- Navigation Bar -->
-            <navbar></navbar>
+            <navbar :on-settings-click="openSettings"></navbar>
 
             <!-- Header -->
             <header>
                 <!-- Carousel -->
-                <carousel></carousel>
+                <carousel :language="language"></carousel>
             </header>
 
             <main>
                 <view-section></view-section>
             </main>
+
+            <!-- Settings Modal -->
+            <settings-modal 
+                :is-open="isSettingsOpen" 
+                :current-language="language"
+                :current-theme="theme"
+                :current-accent="accent"
+                @close="closeSettings"
+                @update:language="setLanguage"
+                @update:theme="setTheme"
+                @update:accent="setAccent"
+            ></settings-modal>
         </div>
 
         <!-- Data -->
@@ -59,6 +67,7 @@
         <script src="./js/vue/components/Navbar.js"></script>
         <script src="./js/vue/components/Carousel.js"></script>
         <script src="./js/vue/components/Section.js"></script>
+        <script src="./js/vue/components/Settings.js"></script>
 
         <!-- Vue App -->
         <script>
@@ -69,7 +78,8 @@
                     return {
                         language: 'en',
                         theme: 'light',
-                        accent: 'jade'
+                        accent: 'jade',
+                        isSettingsOpen: false
                     };
                 },
                 mounted() {
@@ -79,10 +89,12 @@
                     loadPreferences() {
                         const savedTheme = localStorage.getItem('theme');
                         const savedLanguage = localStorage.getItem('language');
-                        
+                        const savedAccent = localStorage.getItem('accent');
+
                         if (savedTheme) this.theme = savedTheme;
                         if (savedLanguage) this.language = savedLanguage;
-                        
+                        if (savedAccent) this.accent = savedAccent;
+
                         this.applyPreferences();
                     },
                     applyPreferences() {
@@ -94,6 +106,12 @@
                             document.documentElement.setAttribute('dir', 'ltr');
                         }
                     },
+                    openSettings() {
+                        this.isSettingsOpen = true;
+                    },
+                    closeSettings() {
+                        this.isSettingsOpen = false;
+                    },
                     setTheme(theme) {
                         this.theme = theme;
                         localStorage.setItem('theme', theme);
@@ -102,6 +120,11 @@
                     setLanguage(lang) {
                         this.language = lang;
                         localStorage.setItem('language', lang);
+                        this.applyPreferences();
+                    },
+                    setAccent(accent) {
+                        this.accent = accent;
+                        localStorage.setItem('accent', accent);
                         this.applyPreferences();
                     }
                 }
@@ -112,6 +135,7 @@
             app.component('sidebar', Sidebar);
             app.component('carousel', Carousel);
             app.component('view-section', ViewSection);
+            app.component('settings-modal', Settings);
 
             // Mount app
             app.mount('#app');
