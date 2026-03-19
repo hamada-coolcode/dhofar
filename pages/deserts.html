@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/dhofar/">
     <title>The Beauty of Deserts</title>
 
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/settings.css">
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -18,7 +19,7 @@
 <body>
 <div id="app">
     <!-- Sidebar Drawer -->
-    <sidebar :is-index-page="false"></sidebar>
+    <sidebar></sidebar>
 
     <!-- Navigation Bar -->
     <navbar :on-settings-click="openSettings"></navbar>
@@ -34,14 +35,30 @@
     ></settings-modal>
 
     <main class="pt-20">
-        <h1 class="text-3xl font-bold text-center">Deserts</h1>
+        <h1 class="text-4xl font-bold text-center mb-8">{{ pageTitle }}</h1>
+
+        <!-- Places Gallery -->
+        <places-gallery
+            category="deserts"
+            @card-click="handleCardClick"
+        ></places-gallery>
+
+        <!-- Place Details Modal -->
+        <place-details
+            :place="selectedPlace"
+            :is-open="!!selectedPlace"
+            @close="selectedPlace = null"
+        ></place-details>
     </main>
 </div>
 
 <!-- Components -->
-<script src="../js/vue/components/Sidebar.js"></script>
-<script src="../js/vue/components/Navbar.js"></script>
-<script src="../js/vue/components/Settings.js"></script>
+<script src="./js/vue/components/Sidebar.js"></script>
+<script src="./js/vue/components/Navbar.js"></script>
+<script src="./js/vue/components/Settings.js"></script>
+<script src="./js/vue/components/Gallery.js"></script>
+<script src="./js/vue/components/Card.js"></script>
+<script src="./js/vue/components/ContentOverview.js"></script>
 
 <!-- Vue App -->
 <script>
@@ -52,13 +69,19 @@
             return {
                 language: 'en',
                 accent: 'dark',
-                isSettingsOpen: false
+                isSettingsOpen: false,
+                selectedPlace: null
             };
         },
         provide() {
             return {
                 language: computed(() => this.language)
             };
+        },
+        computed: {
+            pageTitle() {
+                return this.language === 'ar' ? 'جمال الصحاري' : 'The Beauty of Deserts';
+            }
         },
         mounted() {
             this.loadPreferences();
@@ -74,14 +97,13 @@
                 this.applyPreferences();
             },
             applyPreferences() {
-                // Apply theme (light/dark mode)
                 document.documentElement.setAttribute('data-theme', this.accent);
                 if (this.language === 'ar') {
                     document.documentElement.setAttribute('dir', 'rtl');
                     document.title = 'جمال ظفار';
                 } else {
                     document.documentElement.setAttribute('dir', 'ltr');
-                    document.title = 'The Beauty of Dhofar';
+                    document.title = 'The Beauty of Deserts';
                 }
             },
             openSettings() {
@@ -99,6 +121,9 @@
                 this.accent = accent;
                 localStorage.setItem('accent', accent);
                 this.applyPreferences();
+            },
+            handleCardClick(place) {
+                this.selectedPlace = place;
             }
         }
     });
@@ -107,6 +132,9 @@
     app.component('navbar', Navbar);
     app.component('sidebar', Sidebar);
     app.component('settings-modal', Settings);
+    app.component('places-gallery', PlacesGallery);
+    app.component('place-card', PlaceCard);
+    app.component('place-details', PlaceDetails);
 
     // Mount app
     app.mount('#app');

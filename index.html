@@ -4,12 +4,12 @@
         <!-- Headers -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/dhofar/">
         <title>The Beauty of Dhofar</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="./css/general.css">
         <link rel="stylesheet" href="./css/index/carousel.css">
-        <link rel="stylesheet" href="./css/index/video-sections.css">
         <link rel="stylesheet" href="./css/settings.css">
 
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -23,7 +23,7 @@
     <body>
         <div id="app">
             <!-- Sidebar Drawer -->
-            <sidebar :is-index-page="true"></sidebar>
+            <sidebar></sidebar>
 
             <!-- Navigation Bar -->
             <navbar :on-settings-click="openSettings"></navbar>
@@ -47,6 +47,8 @@
                 @update:language="setLanguage"
                 @update:accent="setAccent"
             ></settings-modal>
+
+            <site-footer></site-footer>
         </div>
 
         <!-- Components -->
@@ -55,6 +57,7 @@
         <script src="./js/vue/components/Carousel.js"></script>
         <script src="./js/vue/components/Section.js"></script>
         <script src="./js/vue/components/Settings.js"></script>
+        <script src="./js/vue/components/Footer.js"></script>
 
         <!-- Vue App -->
         <script>
@@ -122,6 +125,7 @@
             app.component('carousel', Carousel);
             app.component('view-section', ViewSection);
             app.component('settings-modal', Settings);
+            app.component('site-footer', Footer);
 
             // Mount app
             app.mount('#app');

@@ -1,70 +1,70 @@
 // Settings Modal Component
 const Settings = {
-    name: 'Settings',
-    props: ['isOpen', 'currentLanguage', 'currentAccent'],
-    emits: ['close', 'update:language', 'update:accent'],
-    data() {
-        return {
-            languages: [
-                { code: 'en', name: 'English', nativeName: 'English' },
-                { code: 'ar', name: 'Arabic', nativeName: 'العربية' }
-            ],
-            accents: [
-                { id: 'dark', name: { en: 'Dark', ar: 'داكن' }, icon: "night" },
-                { id: 'light', name: { en: 'Light', ar: 'فاتح' }, icon: "sun" },
-            ],
-            modalTitles: {
-                en: 'Settings',
-                ar: 'الإعدادات'
-            },
-            sectionTitles: {
-                en: { language: 'Language', accent: 'Theme' },
-                ar: { language: 'اللغة', accent: 'السمة' }
-            }
-        };
-    },
-    computed: {
-        currentModalTitle() {
-            return this.modalTitles[this.currentLanguage] || this.modalTitles.en;
-        },
-        currentSectionTitles() {
-            return this.sectionTitles[this.currentLanguage] || this.sectionTitles.en;
-        }
-    },
-    watch: {
-        isOpen(newVal) {
-            this.$nextTick(() => {
-                const modal = this.$el;
-                if (newVal) {
-                    modal.showModal();
-                } else {
-                    modal.close();
-                }
-            });
-        }
-    },
-    mounted() {
-        this.$nextTick(() => {
-            lucide.createIcons();
-        });
-    },
-    updated() {
-        this.$nextTick(() => {
-            lucide.createIcons();
-        });
-    },
-    methods: {
-        selectLanguage(lang) {
-            this.$emit('update:language', lang);
-        },
-        selectAccent(accent) {
-            this.$emit('update:accent', accent);
-        },
-        closeModal() {
-            this.$emit('close');
-        }
-    },
-    template: `
+	name: "Settings",
+	props: ["isOpen", "currentLanguage", "currentAccent"],
+	emits: ["close", "update:language", "update:accent"],
+	data() {
+		return {
+			languages: [
+				{ code: "en", name: "English", nativeName: "English" },
+				{ code: "ar", name: "Arabic", nativeName: "العربية" },
+			],
+			accents: [
+				{ id: "dark", name: { en: "Dark", ar: "داكن" }, icon: "night" },
+				{ id: "light", name: { en: "Light", ar: "فاتح" }, icon: "sun" },
+			],
+			modalTitles: {
+				en: "Settings",
+				ar: "الإعدادات",
+			},
+			sectionTitles: {
+				en: { language: "Language", accent: "Theme" },
+				ar: { language: "اللغة", accent: "السمة" },
+			},
+		};
+	},
+	computed: {
+		currentModalTitle() {
+			return this.modalTitles[this.currentLanguage] || this.modalTitles.en;
+		},
+		currentSectionTitles() {
+			return this.sectionTitles[this.currentLanguage] || this.sectionTitles.en;
+		},
+	},
+	watch: {
+		isOpen(newVal) {
+			this.$nextTick(() => {
+				const modal = this.$el;
+				if (newVal) {
+					modal.showModal();
+				} else {
+					modal.close();
+				}
+			});
+		},
+	},
+	mounted() {
+		this.$nextTick(() => {
+			lucide.createIcons();
+		});
+	},
+	updated() {
+		this.$nextTick(() => {
+			lucide.createIcons();
+		});
+	},
+	methods: {
+		selectLanguage(lang) {
+			this.$emit("update:language", lang);
+		},
+		selectAccent(accent) {
+			this.$emit("update:accent", accent);
+		},
+		closeModal() {
+			this.$emit("close");
+		},
+	},
+	template: `
         <dialog class="modal" :class="{'modal-open': isOpen}">
             <div class="modal-box bg-base-100">
                 <div class="flex justify-between items-center mb-6">
@@ -109,5 +109,5 @@ const Settings = {
                 <button>close</button>
             </form>
         </dialog>
-    `
+    `,
 };

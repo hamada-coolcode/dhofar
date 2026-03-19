@@ -1,38 +1,38 @@
 // Navbar Component
 const Navbar = {
-    name: 'Navbar',
-    props: ['onSettingsClick'],
-    inject: ['language'],
-    data() {
-        return {
-            isMenuOpen: false,
-            siteTitle: {
-                en: 'The Beauty of Dhofar',
-                ar: 'جمال ظفار'
-            }
-        };
-    },
-    computed: {
-        currentLang() {
-            return this.language?.value || this.language || 'en';
-        }
-    },
-    mounted() {
-        this.$nextTick(() => {
-            lucide.createIcons();
-        });
-    },
-    updated() {
-        this.$nextTick(() => {
-            lucide.createIcons();
-        });
-    },
-    methods: {
-        toggleMenu() {
-            this.isMenuOpen = !this.isMenuOpen;
-        }
-    },
-    template: `
+	name: "Navbar",
+	props: ["onSettingsClick"],
+	inject: ["language"],
+	data() {
+		return {
+			isMenuOpen: false,
+			siteTitle: {
+				en: "The Beauty of Dhofar",
+				ar: "جمال ظفار",
+			},
+		};
+	},
+	computed: {
+		currentLang() {
+			return this.language?.value || this.language || "en";
+		},
+	},
+	mounted() {
+		this.$nextTick(() => {
+			lucide.createIcons();
+		});
+	},
+	updated() {
+		this.$nextTick(() => {
+			lucide.createIcons();
+		});
+	},
+	methods: {
+		toggleMenu() {
+			this.isMenuOpen = !this.isMenuOpen;
+		},
+	},
+	template: `
         <nav class="navbar bg-base-100 shadow-sm fixed top-0 left-0 right-0 z-[var(--z-navbar)]" :style="{ height: 'var(--navbar-height)' }">
             <div class="flex-none">
                 <label for="navbar-drawer" class="btn btn-circle swap swap-rotate btn-ghost">
@@ -53,5 +53,5 @@ const Navbar = {
                 </button>
             </div>
         </nav>
-    `
+    `,
 };

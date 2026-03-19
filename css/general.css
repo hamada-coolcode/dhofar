@@ -1,83 +1,83 @@
 /* Fonts */
 @font-face {
-    font-family: 'Impact';
-    src: url("../fonts/Impact.ttf");
+	font-family: "Impact";
+	src: url("../fonts/Impact.ttf");
 }
 @font-face {
-    font-family: 'Pacifico';
-    src: url("../fonts/Pacifico.ttf");
+	font-family: "Pacifico";
+	src: url("../fonts/Pacifico.ttf");
 }
 @font-face {
-    font-family: 'Poppins';
-    src: url("../fonts/Poppins.ttf");
+	font-family: "Poppins";
+	src: url("../fonts/Poppins.ttf");
 }
 /* Arabic Fonts */
 @font-face {
-    font-family: 'Tajawal';
-    src: url("../fonts/Tajawal.ttf");
+	font-family: "Tajawal";
+	src: url("../fonts/Tajawal.ttf");
 }
 @font-face {
-    font-family: 'Ruqaa';
-    src: url("../fonts/Ruqaa.ttf");
+	font-family: "Ruqaa";
+	src: url("../fonts/Ruqaa.ttf");
 }
 /* CSS Variables */
 :root {
-    /* Font Families */
-    --font-family-display: "Impact", display;
-    --font-family-body: "Poppins", sans-serif;
-    --cursive-font-family: "Pacifico", cursive;
+	/* Font Families */
+	--font-family-display: "Impact", display;
+	--font-family-body: "Poppins", sans-serif;
+	--cursive-font-family: "Pacifico", cursive;
 
-    /* Font Size */
-    --font-size: 100%;
+	/* Font Size */
+	--font-size: 100%;
 
-    /* Line Height */
-    --line-height-small: 1.2;
-    --line-height-big: 1.5;
+	/* Line Height */
+	--line-height-small: 1.2;
+	--line-height-big: 1.5;
 
-    /* Font Weight */
-    --font-weight-thin: 300;
-    --font-weight-normal: 500;
-    --font-weight-bold: 700;
+	/* Font Weight */
+	--font-weight-thin: 300;
+	--font-weight-normal: 500;
+	--font-weight-bold: 700;
 
-    /* Border Radius */
-    --border-radius: 0.25rem;
+	/* Border Radius */
+	--border-radius: 0.25rem;
 
-    /* Z-Index Scale */
-    --z-base: 10;
-    --z-dropdown: 20;
-    --z-sticky: 30;
-    --z-navbar: 40;
-    --z-carousel-controls: 50;
-    --z-thumbnail: 60;
-    --z-content-overlay: 70;
-    --z-modal: 9999;
+	/* Z-Index Scale */
+	--z-base: 10;
+	--z-dropdown: 20;
+	--z-sticky: 30;
+	--z-navbar: 40;
+	--z-carousel-controls: 50;
+	--z-thumbnail: 60;
+	--z-content-overlay: 70;
+	--z-modal: 9999;
 
-    /* Navbar Height */
-    --navbar-height: 5rem;
+	/* Navbar Height */
+	--navbar-height: 5rem;
 
-    /* Theme Colors */
-    --color: ;
-    --bg-color: ;
+	/* Theme Colors */
+	--color: ;
+	--bg-color: ;
 }
 /* Themes */
 [data-theme="light"] {
-    --color: rgba(0, 0, 0, 0.85);
-    --bg-color: rgba(255, 255, 255, 0.8);
-    --bg-color-shadow: rgba(255, 255, 255, 0.9);
+	--color: rgba(0, 0, 0, 0.85);
+	--bg-color: rgba(255, 255, 255, 0.8);
+	--bg-color-shadow: rgba(255, 255, 255, 0.9);
 }
 [data-theme="dark"] {
-    --color: rgba(255, 255, 255, 0.9);
-    --bg-color: rgba(0, 0, 0, 0.9);
-    --bg-color-shadow: rgba(0, 0, 0, 0.8);
+	--color: rgba(255, 255, 255, 0.9);
+	--bg-color: rgba(0, 0, 0, 0.9);
+	--bg-color-shadow: rgba(0, 0, 0, 0.8);
 }
 
 /* RTL (Arabic) Support */
 [dir="rtl"] {
-    --font-family-body: "Tajawal", sans-serif;
-    --cursive-font-family: "Ruqaa", cursive;
+	--font-family-body: "Tajawal", sans-serif;
+	--cursive-font-family: "Ruqaa", cursive;
 }
 
 /* Global Styles */
 body {
-    font-family: var(--font-family-body);
+	font-family: var(--font-family-body);
 }

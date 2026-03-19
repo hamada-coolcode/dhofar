@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/dhofar/">
     <title>The Beauty of Khareef</title>
 
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/settings.css">
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -18,7 +19,7 @@
 <body>
 <div id="app">
     <!-- Sidebar Drawer -->
-    <sidebar :is-index-page="false"></sidebar>
+    <sidebar></sidebar>
 
     <!-- Navigation Bar -->
     <navbar :on-settings-click="openSettings"></navbar>
@@ -34,14 +35,32 @@
     ></settings-modal>
 
     <main class="pt-20">
-        <h1 class="text-3xl font-bold text-center">Khareef</h1>
+        <h1 class="text-4xl font-bold text-center mb-8">{{ pageTitle }}</h1>
+
+        <!-- Places Gallery -->
+        <places-gallery
+            category="khareef"
+            @card-click="handleCardClick"
+        ></places-gallery>
+
+        <!-- Place Details Modal -->
+        <place-details
+            :place="selectedPlace"
+            :is-open="!!selectedPlace"
+            @close="selectedPlace = null"
+        >
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122016.97778857008!2d54.439512407836446!3d17.12000878013935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd39503c68b8a25%3A0xbca00994e2b26d34!2sWadi%20Darbat!5e0!3m2!1sen!2som!4v1773904693565!5m2!1sen!2som" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="border-0 h-[450px] w-full"></iframe>
+        </place-details>
     </main>
 </div>
 
 <!-- Components -->
-<script src="../js/vue/components/Sidebar.js"></script>
-<script src="../js/vue/components/Navbar.js"></script>
-<script src="../js/vue/components/Settings.js"></script>
+<script src="./js/vue/components/Sidebar.js"></script>
+<script src="./js/vue/components/Navbar.js"></script>
+<script src="./js/vue/components/Settings.js"></script>
+<script src="./js/vue/components/Gallery.js"></script>
+<script src="./js/vue/components/Card.js"></script>
+<script src="./js/vue/components/ContentOverview.js"></script>
 
 <!-- Vue App -->
 <script>
@@ -52,13 +71,19 @@
             return {
                 language: 'en',
                 accent: 'dark',
-                isSettingsOpen: false
+                isSettingsOpen: false,
+                selectedPlace: null
             };
         },
         provide() {
             return {
                 language: computed(() => this.language)
             };
+        },
+        computed: {
+            pageTitle() {
+                return this.language === 'ar' ? 'جمال الخريف' : 'The Beauty of Khareef';
+            }
         },
         mounted() {
             this.loadPreferences();
@@ -74,14 +99,13 @@
                 this.applyPreferences();
             },
             applyPreferences() {
-                // Apply theme (light/dark mode)
                 document.documentElement.setAttribute('data-theme', this.accent);
                 if (this.language === 'ar') {
                     document.documentElement.setAttribute('dir', 'rtl');
                     document.title = 'جمال ظفار';
                 } else {
                     document.documentElement.setAttribute('dir', 'ltr');
-                    document.title = 'The Beauty of Dhofar';
+                    document.title = 'The Beauty of Khareef';
                 }
             },
             openSettings() {
@@ -99,6 +123,9 @@
                 this.accent = accent;
                 localStorage.setItem('accent', accent);
                 this.applyPreferences();
+            },
+            handleCardClick(place) {
+                this.selectedPlace = place;
             }
         }
     });
@@ -107,6 +134,9 @@
     app.component('navbar', Navbar);
     app.component('sidebar', Sidebar);
     app.component('settings-modal', Settings);
+    app.component('places-gallery', PlacesGallery);
+    app.component('place-card', PlaceCard);
+    app.component('place-details', PlaceDetails);
 
     // Mount app
     app.mount('#app');
