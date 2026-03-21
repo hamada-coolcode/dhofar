@@ -1,53 +1,49 @@
 // Sidebar Component
 const Sidebar = {
 	name: "Sidebar",
-	inject: ["language"],
 	data() {
 		return {
-			// All links are relative to base href="/"
 			sidebarItems: [
-				{
-					text: { en: "Home", ar: "الرئيسية" },
-					href: "./index.html",
-					icon: "home",
-				},
-				{
-					text: { en: "Khareef", ar: "الخريف" },
-					href: "./pages/khareef.html",
-					icon: "cloud-rain",
-				},
-				{
-					text: { en: "Deserts", ar: "الصحاري" },
-					href: "./pages/deserts.html",
-					icon: "sun",
-				},
-				{
-					text: { en: "Coasts", ar: "السواحل" },
-					href: "./pages/coasts.html",
-					icon: "waves",
-				},
-				{
-					text: { en: "About", ar: "حول" },
-					href: "./pages/about.html",
-					icon: "info",
-				},
+				{ key: "nav.home", href: "./index.html", icon: "home" },
+				{ key: "nav.khareef", href: "./pages/khareef.html", icon: "cloud-rain" },
+				{ key: "nav.deserts", href: "./pages/deserts.html", icon: "sun" },
+				{ key: "nav.coasts", href: "./pages/coasts.html", icon: "waves" },
+				{ key: "nav.ruins", href: "./pages/ruins.html", icon: "castle" },
+				{ key: "nav.about", href: "./pages/about.html", icon: "info" },
 			],
+			localeChangeCount: 0,
 		};
 	},
 	computed: {
 		currentLang() {
-			return this.language?.value || this.language || "en";
+			return window.i18n.state.locale;
+		},
+		translatedItems() {
+			this.localeChangeCount; // Make reactive to locale changes
+			return this.sidebarItems.map((item) => ({
+				...item,
+				text: window.t(item.key),
+			}));
 		},
 	},
 	mounted() {
 		this.$nextTick(() => {
 			lucide.createIcons();
 		});
+		window.addEventListener("localechange", this.handleLocaleChange);
+	},
+	beforeUnmount() {
+		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	updated() {
 		this.$nextTick(() => {
 			lucide.createIcons();
 		});
+	},
+	methods: {
+		handleLocaleChange() {
+			this.localeChangeCount++;
+		},
 	},
 	template: `
         <div class="drawer fixed top-0 left-0 z-40">
@@ -55,10 +51,10 @@ const Sidebar = {
             <div class="drawer-side mt-[80px]">
                 <label for="navbar-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
                 <ul class="menu bg-base-200 min-h-full w-80 p-4">
-                    <li v-for="(item, index) in sidebarItems" :key="index">
+                    <li v-for="(item, index) in translatedItems" :key="index">
                         <a :href="item.href">
                             <i :data-lucide="item.icon" class="h-5 w-5"></i>
-                            {{ item.text[currentLang] }}
+                            {{ item.text }}
                         </a>
                     </li>
                 </ul>

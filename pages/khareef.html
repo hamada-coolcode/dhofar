@@ -48,11 +48,12 @@
             :place="selectedPlace"
             :is-open="!!selectedPlace"
             @close="selectedPlace = null"
-        >
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122016.97778857008!2d54.439512407836446!3d17.12000878013935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd39503c68b8a25%3A0xbca00994e2b26d34!2sWadi%20Darbat!5e0!3m2!1sen!2som!4v1773904693565!5m2!1sen!2som" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="border-0 h-[450px] w-full"></iframe>
-        </place-details>
+        ></place-details>
     </main>
 </div>
+
+<!-- i18n -->
+<script src="./js/i18n/index.js"></script>
 
 <!-- Components -->
 <script src="./js/vue/components/Sidebar.js"></script>
@@ -117,6 +118,7 @@
             setLanguage(lang) {
                 this.language = lang;
                 localStorage.setItem('language', lang);
+                window.i18n.setLocale(lang);
                 this.applyPreferences();
             },
             setAccent(accent) {

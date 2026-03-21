@@ -2,25 +2,29 @@
 const Navbar = {
 	name: "Navbar",
 	props: ["onSettingsClick"],
-	inject: ["language"],
 	data() {
 		return {
 			isMenuOpen: false,
-			siteTitle: {
-				en: "The Beauty of Dhofar",
-				ar: "جمال ظفار",
-			},
+			localeChangeCount: 0,
 		};
 	},
 	computed: {
 		currentLang() {
-			return this.language?.value || this.language || "en";
+			return window.i18n.state.locale;
+		},
+		siteTitle() {
+			this.localeChangeCount; // Make reactive to locale changes
+			return window.t("site.title");
 		},
 	},
 	mounted() {
 		this.$nextTick(() => {
 			lucide.createIcons();
 		});
+		window.addEventListener("localechange", this.handleLocaleChange);
+	},
+	beforeUnmount() {
+		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	updated() {
 		this.$nextTick(() => {
@@ -28,6 +32,9 @@ const Navbar = {
 		});
 	},
 	methods: {
+		handleLocaleChange() {
+			this.localeChangeCount++;
+		},
 		toggleMenu() {
 			this.isMenuOpen = !this.isMenuOpen;
 		},
@@ -44,7 +51,7 @@ const Navbar = {
             <div class="flex-1">
                 <a class="btn btn-ghost text-xl" href="./index.html">
                     <i data-lucide="tent" class="h-6 w-6 mr-2"></i>
-                    {{ siteTitle[currentLang] }}
+                    {{ siteTitle }}
                 </a>
             </div>
             <div class="flex-none">

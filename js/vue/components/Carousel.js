@@ -2,14 +2,12 @@
 const Carousel = {
 	name: "Carousel",
 	props: ["language"],
-	inject: ["language"],
 	data() {
 		return {
 			slides: [
 				{
 					id: 1,
 					key: "khareef",
-					title: "Khareef",
 					image: "./images/index_slider/khareef.png",
 					thumbnail: "./images/index_slider/khareef.png",
 					link: "./pages/khareef.html",
@@ -17,7 +15,6 @@ const Carousel = {
 				{
 					id: 2,
 					key: "deserts",
-					title: "Deserts",
 					image: "./images/index_slider/deserts.png",
 					thumbnail: "./images/index_slider/deserts.png",
 					link: "./pages/deserts.html",
@@ -25,7 +22,6 @@ const Carousel = {
 				{
 					id: 3,
 					key: "coasts",
-					title: "Coasts",
 					image: "./images/index_slider/coasts.jpg",
 					thumbnail: "./images/index_slider/coasts.jpg",
 					link: "./pages/coasts.html",
@@ -33,75 +29,39 @@ const Carousel = {
 			],
 			isTransitioning: false,
 			transitionTime: 500,
-			buttonText: {
-				en: "LEARN MORE",
-				ar: "اقرأ المزيد",
-			},
-			slideTitles: {
-				khareef: { en: "Khareef", ar: "الخريف" },
-				deserts: { en: "Deserts", ar: "الصحاري" },
-				coasts: { en: "Coasts", ar: "السواحل" },
-			},
+			localeChangeCount: 0,
 		};
 	},
 	computed: {
 		currentLang() {
-			return this.language?.value || this.language || "en";
+			return this.language || window.i18n.state.locale;
 		},
 		translatedSlides() {
-			const carouselTranslations = {
-				en: {
-					khareef: {
-						heading: "Welcome to <mark>Dhofar</mark>",
-						description:
-							"When the monsoon arrives in June, Dhofar transforms into a lush emerald wonderland. Mist-cloaked mountains, cascading waterfalls, and cool breezes turn every trail into a story and every view into a memory.",
-					},
-					deserts: {
-						heading: "Endless <br><mark>Deserts</mark>",
-						description:
-							"Golden dunes meet serene horizons in the Rub' al Khali. Experience sandboarding by day and stargazing under pristine skies by night.",
-					},
-					coasts: {
-						heading: "Azure <br><mark>Coasts</mark>",
-						description:
-							"Walk along powdery beaches, watch dolphins dance, and witness the thunder of Mughsail blowholes—Dhofar's coast is a sanctuary by the sea.",
-					},
-				},
-				ar: {
-					khareef: {
-						heading: "مرحباً بكم في <mark>ظفار</mark>",
-						description:
-							"عندما يصل الخريف في يونيو، تتحول ظفار إلى أرض خضراء مورقة. جبال مغطاة بالضباب، شلالات متدفقة، ونسيم بارد يحول كل مسار إلى قصة وكل منظر إلى ذكرى.",
-					},
-					deserts: {
-						heading: "صحاري <br><mark>لا متناهية</mark>",
-						description:
-							"تلتقي الكثبان الذهبية بالأفق serene في الربع الخالي. جرب التزلج على الرمال نهاراً وتأمل النجوم تحت سماء صافية ليلاً.",
-					},
-					coasts: {
-						heading: "سواحل <br><mark>فيروزية</mark>",
-						description:
-							"تمشى على طول الشواطئ الرملية، شاهد الدلافين وهي ترقص، واشهد هدير فجوات مغسيل - ساحل ظفار هو ملاذ بجانب البحر.",
-					},
-				},
-			};
-			return this.slides.map((slide) => {
-				const translation =
-					carouselTranslations[this.language]?.[slide.key] ||
-					carouselTranslations.en[slide.key];
-				return {
-					...slide,
-					heading: translation.heading,
-					description: translation.description,
-				};
-			});
+			this.localeChangeCount; // Make reactive to locale changes
+			return this.slides.map((slide) => ({
+				...slide,
+				title: window.t(`carousel.slides.${slide.key}.title`),
+				heading: window.t(`carousel.slides.${slide.key}.heading`),
+				description: window.t(`carousel.slides.${slide.key}.description`),
+			}));
+		},
+		buttonText() {
+			this.localeChangeCount; // Make reactive to locale changes
+			return window.t("carousel.buttonText");
 		},
 	},
 	mounted() {
 		this.setupCarousel();
 		this.initTyping();
+		window.addEventListener("localechange", this.handleLocaleChange);
+	},
+	beforeUnmount() {
+		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	methods: {
+		handleLocaleChange() {
+			this.localeChangeCount++;
+		},
 		setupCarousel() {
 			this.carouselEl = this.$el;
 			this.sliderDom = this.$el.querySelector(".carousel__list");
@@ -186,7 +146,7 @@ const Carousel = {
                         <div class="carousel__item__title" v-html="slide.heading"></div>
                         <div class="carousel__item__description">{{ slide.description }}</div>
                         <div class="carousel__item__buttons">
-                            <a :href="slide.link"><button class="btn btn-outline">{{ buttonText[currentLang] }}</button></a>
+                            <a :href="slide.link"><button class="btn btn-outline">{{ buttonText }}</button></a>
                         </div>
                     </div>
                 </div>
@@ -197,7 +157,7 @@ const Carousel = {
                 <div v-for="(slide, index) in translatedSlides" :key="index" class="carousel__thumbnail__item">
                     <img :src="slide.thumbnail" :alt="slide.title">
                     <div class="carousel__thumbnail__item__content">
-                        <div class="carousel__thumbnail__item__title">{{ slideTitles[slide.key][currentLang] }}</div>
+                        <div class="carousel__thumbnail__item__title">{{ slide.title }}</div>
                     </div>
                 </div>
             </div>

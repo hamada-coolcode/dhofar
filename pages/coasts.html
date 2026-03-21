@@ -52,6 +52,9 @@
     </main>
 </div>
 
+<!-- i18n -->
+<script src="./js/i18n/index.js"></script>
+
 <!-- Components -->
 <script src="./js/vue/components/Sidebar.js"></script>
 <script src="./js/vue/components/Navbar.js"></script>
@@ -115,6 +118,7 @@
             setLanguage(lang) {
                 this.language = lang;
                 localStorage.setItem('language', lang);
+                window.i18n.setLocale(lang);
                 this.applyPreferences();
             },
             setAccent(accent) {
