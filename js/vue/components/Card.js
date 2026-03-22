@@ -29,7 +29,7 @@ const PlaceCard = {
 		},
 	},
 	template: `
-        <div 
+        <div
             class="hover-3d cursor-pointer"
             style="animation-delay: {{ index * 100 }}ms"
             @click="handleClick"
@@ -75,7 +75,7 @@ const PlaceCard = {
                     </div>
                 </div>
             </div>
-            
+
             <!-- 8 empty divs needed for the 3D effect -->
             <div></div>
             <div></div>

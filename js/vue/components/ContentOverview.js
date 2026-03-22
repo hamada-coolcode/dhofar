@@ -14,7 +14,9 @@ const PlaceDetails = {
 	},
 	emits: ["close"],
 	data() {
-		return {};
+		return {
+			currentSlideIndex: 0,
+		};
 	},
 	computed: {
 		currentLang() {
@@ -35,10 +37,39 @@ const PlaceDetails = {
 		closeText() {
 			return window.t("place.close");
 		},
+		allImages() {
+			// Combine primary image with gallery for the carousel
+			const images = [this.place.image];
+			if (this.place.gallery && this.place.gallery.length > 0) {
+				images.push(...this.place.gallery);
+			}
+			return images;
+		},
+		hasGallery() {
+			return this.allImages.length > 1;
+		},
 	},
 	methods: {
 		handleClose() {
 			this.$emit("close");
+		},
+		nextSlide() {
+			if (!this.hasGallery) return;
+			this.currentSlideIndex = (this.currentSlideIndex + 1) % this.allImages.length;
+		},
+		prevSlide() {
+			if (!this.hasGallery) return;
+			this.currentSlideIndex = (this.currentSlideIndex - 1 + this.allImages.length) % this.allImages.length;
+		},
+		goToSlide(index) {
+			this.currentSlideIndex = index;
+		},
+	},
+	watch: {
+		isOpen(newVal) {
+			if (newVal) {
+				this.currentSlideIndex = 0;
+			}
 		},
 	},
 	template: `
@@ -76,7 +107,7 @@ const PlaceDetails = {
                         <!-- Title Overlay -->
                         <div class="absolute bottom-0 left-0 right-0 p-6">
                             <h2 class="text-4xl md:text-5xl font-bold text-white mb-2">
-                                {{ place.name }}
+                                {{ place.name[currentLang] }}
                             </h2>
                             <div class="flex items-center gap-4 text-white/90">
                                 <div class="flex items-center gap-1">
@@ -90,7 +121,7 @@ const PlaceDetails = {
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
-                                    <span>{{ place.stateText }}</span>
+                                    <span>{{ place.state[currentLang] }}</span>
                                 </div>
                             </div>
                         </div>
@@ -102,26 +133,42 @@ const PlaceDetails = {
                         <div class="mb-8">
                             <h3 class="text-xl font-semibold mb-3">{{ aboutLabel }}</h3>
                             <p class="text-base-content/80 leading-relaxed">
-                                {{ place.description }}
+                                {{ place.description[currentLang] }}
                             </p>
                         </div>
 
-                        <!-- Gallery Carousel -->
-                        <div v-if="place.gallery && place.gallery.length > 0" class="mb-8">
+                        <!-- Gallery Carousel (after About section) -->
+                        <div v-if="hasGallery" class="mb-8">
                             <h3 class="text-xl font-semibold mb-3">{{ galleryLabel }}</h3>
-                            <div class="carousel w-full bg-base-200 rounded-xl p-4 gap-4">
+                            <div class="carousel w-full bg-base-200 rounded-xl overflow-hidden">
                                 <div
-                                    v-for="(img, idx) in place.gallery"
+                                    v-for="(img, idx) in allImages"
                                     :key="idx"
-                                    :id="'slide' + (idx + 1)"
-                                    class="carousel-item relative w-full"
+                                    class="carousel-item w-full"
+                                    :class="{ 'hidden': idx !== currentSlideIndex }"
                                 >
-                                    <img :src="img" class="w-full rounded-lg" @error="$event.target.src = './images/placeholder.jpg'" />
-                                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                        <a :href="'#slide' + (idx === 0 ? place.gallery.length : idx)" class="btn btn-circle">❮</a>
-                                        <a :href="'#slide' + (idx + 2 > place.gallery.length ? 1 : idx + 2)" class="btn btn-circle">❯</a>
-                                    </div>
+                                    <img
+                                        :src="img"
+                                        :alt="place.name[currentLang]"
+                                        class="w-full h-64 md:h-80 object-cover"
+                                        @error="$event.target.src = './images/placeholder.jpg'"
+                                    />
                                 </div>
+                            </div>
+                            <!-- Carousel Navigation Buttons -->
+                            <div class="flex justify-center gap-2 mt-4">
+                                <button @click="prevSlide" class="btn btn-circle btn-sm">❮</button>
+                                <button @click="nextSlide" class="btn btn-circle btn-sm">❯</button>
+                            </div>
+                            <!-- Slide Indicators -->
+                            <div class="flex justify-center gap-2 mt-3">
+                                <button
+                                    v-for="(img, idx) in allImages"
+                                    :key="idx"
+                                    @click="goToSlide(idx)"
+                                    class="w-2 h-2 rounded-full transition-all"
+                                    :class="idx === currentSlideIndex ? 'bg-primary w-4' : 'bg-base-300 hover:bg-base-content/50'"
+                                ></button>
                             </div>
                         </div>
 
