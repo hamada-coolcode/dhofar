@@ -55,7 +55,7 @@ const Navbar = {
                 </a>
             </div>
             <div class="flex-none">
-                <button @click="onSettingsClick" class="btn btn-square btn-ghost">
+                <button @click="onSettingsClick" class="btn btn-circle btn-ghost">
                     <i data-lucide="settings" class="h-5 w-5"></i>
                 </button>
             </div>

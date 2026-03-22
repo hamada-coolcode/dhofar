@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/dhofar/">
     <title>About</title>
 
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/settings.css">
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Vue.js 3 CDN -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -34,7 +35,8 @@
     ></settings-modal>
 
     <main class="pt-20">
-        <h1 class="text-3xl font-bold text-center">About</h1>
+        <about-hero></about-hero>
+        <about-technologies></about-technologies>
     </main>
 </div>
 
@@ -42,9 +44,11 @@
 <script src="../js/i18n/index.js"></script>
 
 <!-- Components -->
-<script src="../js/vue/components/Sidebar.js"></script>
-<script src="../js/vue/components/Navbar.js"></script>
-<script src="../js/vue/components/Settings.js"></script>
+<script src="./js/vue/components/Sidebar.js"></script>
+<script src="./js/vue/components/Navbar.js"></script>
+<script src="./js/vue/components/Settings.js"></script>
+<script src="./js/vue/components/AboutHero.js"></script>
+<script src="./js/vue/components/AboutTechnologies.js"></script>
 
 <!-- Vue App -->
 <script>
@@ -111,6 +115,8 @@
     app.component('navbar', Navbar);
     app.component('sidebar', Sidebar);
     app.component('settings-modal', Settings);
+    app.component('about-hero', AboutHero);
+    app.component('about-technologies', AboutTechnologies);
 
     // Mount app
     app.mount('#app');

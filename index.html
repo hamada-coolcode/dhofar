@@ -8,15 +8,16 @@
         <title>The Beauty of Dhofar</title>
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5" />
         <link rel="stylesheet" href="./css/general.css">
         <link rel="stylesheet" href="./css/index/carousel.css">
         <link rel="stylesheet" href="./css/settings.css">
 
-        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <!-- Tailwind CSS -->
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
         <!-- Vue.js 3 CDN -->
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.min.js"></script>
         <script src="https://unpkg.com/lucide@latest"></script>
     </head>
@@ -55,13 +56,18 @@
         <script src="./js/i18n/index.js"></script>
 
         <!-- Components -->
+        <script src="./js/vue/components/Sections/PlaceCategorySection.js"></script>
+        <script src="./js/vue/components/Sections/ExploreHeader.js"></script>
+        <script src="./js/vue/components/Sections/ExploreCardLarge.js"></script>
+        <script src="./js/vue/components/Sections/ExploreCardSmall.js"></script>
+        <script src="./js/vue/components/Sections/ExploreLeftColumn.js"></script>
+        <script src="./js/vue/components/Sections/ExploreRightColumn.js"></script>
         <script src="./js/vue/components/Sidebar.js"></script>
         <script src="./js/vue/components/Navbar.js"></script>
         <script src="./js/vue/components/Carousel.js"></script>
         <script src="./js/vue/components/Section.js"></script>
         <script src="./js/vue/components/Settings.js"></script>
         <script src="./js/vue/components/Footer.js"></script>
-        <script src="./js/vue/components/Sections/PlaceCategorySection.js"></script>
 
         <!-- Vue App -->
         <script>
@@ -132,6 +138,11 @@
             app.component('settings-modal', Settings);
             app.component('site-footer', Footer);
             app.component('place-category-section', PlaceCategorySection);
+            app.component('explore-header', ExploreHeader);
+            app.component('explore-card-large', ExploreCardLarge);
+            app.component('explore-card-small', ExploreCardSmall);
+            app.component('explore-left-column', ExploreLeftColumn);
+            app.component('explore-right-column', ExploreRightColumn);
 
             // Mount app
             app.mount('#app');

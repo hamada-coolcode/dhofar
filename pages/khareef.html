@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Vue.js 3 CDN -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -62,6 +62,11 @@
 <script src="./js/vue/components/Gallery.js"></script>
 <script src="./js/vue/components/Card.js"></script>
 <script src="./js/vue/components/ContentOverview.js"></script>
+<script src="./js/vue/components/Sections/ExploreHeader.js"></script>
+<script src="./js/vue/components/Sections/ExploreCardLarge.js"></script>
+<script src="./js/vue/components/Sections/ExploreCardSmall.js"></script>
+<script src="./js/vue/components/Sections/ExploreLeftColumn.js"></script>
+<script src="./js/vue/components/Sections/ExploreRightColumn.js"></script>
 
 <!-- Vue App -->
 <script>
@@ -139,6 +144,11 @@
     app.component('places-gallery', PlacesGallery);
     app.component('place-card', PlaceCard);
     app.component('place-details', PlaceDetails);
+    app.component('explore-header', ExploreHeader);
+    app.component('explore-card-large', ExploreCardLarge);
+    app.component('explore-card-small', ExploreCardSmall);
+    app.component('explore-left-column', ExploreLeftColumn);
+    app.component('explore-right-column', ExploreRightColumn);
 
     // Mount app
     app.mount('#app');
