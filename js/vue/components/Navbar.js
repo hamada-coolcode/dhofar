@@ -5,7 +5,6 @@ const Navbar = {
 	data() {
 		return {
 			isMenuOpen: false,
-			localeChangeCount: 0,
 		};
 	},
 	computed: {
@@ -13,7 +12,6 @@ const Navbar = {
 			return window.i18n.state.locale;
 		},
 		siteTitle() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("site.title");
 		},
 	},
@@ -21,10 +19,6 @@ const Navbar = {
 		this.$nextTick(() => {
 			lucide.createIcons();
 		});
-		window.addEventListener("localechange", this.handleLocaleChange);
-	},
-	beforeUnmount() {
-		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	updated() {
 		this.$nextTick(() => {
@@ -32,9 +26,6 @@ const Navbar = {
 		});
 	},
 	methods: {
-		handleLocaleChange() {
-			this.localeChangeCount++;
-		},
 		toggleMenu() {
 			this.isMenuOpen = !this.isMenuOpen;
 		},

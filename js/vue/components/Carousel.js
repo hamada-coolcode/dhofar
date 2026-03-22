@@ -29,7 +29,6 @@ const Carousel = {
 			],
 			isTransitioning: false,
 			transitionTime: 500,
-			localeChangeCount: 0,
 		};
 	},
 	computed: {
@@ -37,7 +36,6 @@ const Carousel = {
 			return this.language || window.i18n.state.locale;
 		},
 		translatedSlides() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return this.slides.map((slide) => ({
 				...slide,
 				title: window.t(`carousel.slides.${slide.key}.title`),
@@ -46,22 +44,14 @@ const Carousel = {
 			}));
 		},
 		buttonText() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("carousel.buttonText");
 		},
 	},
 	mounted() {
 		this.setupCarousel();
 		this.initTyping();
-		window.addEventListener("localechange", this.handleLocaleChange);
-	},
-	beforeUnmount() {
-		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	methods: {
-		handleLocaleChange() {
-			this.localeChangeCount++;
-		},
 		setupCarousel() {
 			this.carouselEl = this.$el;
 			this.sliderDom = this.$el.querySelector(".carousel__list");

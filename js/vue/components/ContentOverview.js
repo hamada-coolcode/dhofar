@@ -14,45 +14,29 @@ const PlaceDetails = {
 	},
 	emits: ["close"],
 	data() {
-		return {
-			localeChangeCount: 0,
-		};
+		return {};
 	},
 	computed: {
 		currentLang() {
 			return this.language?.value || this.language || "en";
 		},
 		aboutLabel() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("place.about");
 		},
 		galleryLabel() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("place.gallery");
 		},
 		locationLabel() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("place.location");
 		},
 		openInMapsText() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("place.openInMaps");
 		},
 		closeText() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("place.close");
 		},
 	},
-	mounted() {
-		window.addEventListener("localechange", this.handleLocaleChange);
-	},
-	beforeUnmount() {
-		window.removeEventListener("localechange", this.handleLocaleChange);
-	},
 	methods: {
-		handleLocaleChange() {
-			this.localeChangeCount++;
-		},
 		handleClose() {
 			this.$emit("close");
 		},

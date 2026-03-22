@@ -14,21 +14,16 @@ const ViewSection = {
 				{ key: "nav.deserts", link: "./pages/deserts.html", videoLink: "./videos/deserts.mp4" },
 				{ key: "nav.coasts", link: "./pages/coasts.html", videoLink: "./videos/coasts.mp4" },
 			],
-			localeChangeCount: 0,
 		};
 	},
 	computed: {
 		currentLang() { return window.i18n.state.locale; },
-		buttonText() { this.localeChangeCount; return window.t("section.explore"); },
+		buttonText() { return window.t("section.explore"); },
 		translatedSections() {
-			this.localeChangeCount;
 			return this.sections.map((section) => ({ ...section, title: window.t(section.key) }));
 		},
 	},
-	mounted() { window.addEventListener("localechange", this.handleLocaleChange); },
-	beforeUnmount() { window.removeEventListener("localechange", this.handleLocaleChange); },
 	methods: {
-		handleLocaleChange() { this.localeChangeCount++; },
 		t(key) { return window.t(key); },
 	},
 	template: `

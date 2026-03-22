@@ -9,24 +9,19 @@ const Settings = {
 				{ code: "en", nativeName: "English" },
 				{ code: "ar", nativeName: "العربية" },
 			],
-			localeChangeCount: 0,
 		};
 	},
 	computed: {
 		currentModalTitle() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("settings.title");
 		},
 		languageSectionTitle() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("settings.language");
 		},
 		themeSectionTitle() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return window.t("settings.theme");
 		},
 		accents() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return [
 				{ id: "dark", name: window.t("settings.themes.dark") },
 				{ id: "light", name: window.t("settings.themes.light") },
@@ -49,10 +44,6 @@ const Settings = {
 		this.$nextTick(() => {
 			lucide.createIcons();
 		});
-		window.addEventListener("localechange", this.handleLocaleChange);
-	},
-	beforeUnmount() {
-		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	updated() {
 		this.$nextTick(() => {
@@ -60,9 +51,6 @@ const Settings = {
 		});
 	},
 	methods: {
-		handleLocaleChange() {
-			this.localeChangeCount++;
-		},
 		selectLanguage(lang) {
 			this.$emit("update:language", lang);
 		},

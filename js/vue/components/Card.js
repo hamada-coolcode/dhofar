@@ -13,29 +13,17 @@ const PlaceCard = {
 		},
 	},
 	data() {
-		return {
-			localeChangeCount: 0,
-		};
+		return {};
 	},
 	computed: {
 		currentLang() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return this.language?.value || this.language || "en";
 		},
 		starRating() {
 			return Math.round(this.place.rating);
 		},
 	},
-	mounted() {
-		window.addEventListener("localechange", this.handleLocaleChange);
-	},
-	beforeUnmount() {
-		window.removeEventListener("localechange", this.handleLocaleChange);
-	},
 	methods: {
-		handleLocaleChange() {
-			this.localeChangeCount++;
-		},
 		handleClick() {
 			this.$emit("click", this.place);
 		},

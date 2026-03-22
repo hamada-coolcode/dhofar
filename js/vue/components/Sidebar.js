@@ -11,7 +11,6 @@ const Sidebar = {
 				{ key: "nav.ruins", href: "./pages/ruins.html", icon: "castle" },
 				{ key: "nav.about", href: "./pages/about.html", icon: "info" },
 			],
-			localeChangeCount: 0,
 		};
 	},
 	computed: {
@@ -19,7 +18,6 @@ const Sidebar = {
 			return window.i18n.state.locale;
 		},
 		translatedItems() {
-			this.localeChangeCount; // Make reactive to locale changes
 			return this.sidebarItems.map((item) => ({
 				...item,
 				text: window.t(item.key),
@@ -30,21 +28,13 @@ const Sidebar = {
 		this.$nextTick(() => {
 			lucide.createIcons();
 		});
-		window.addEventListener("localechange", this.handleLocaleChange);
-	},
-	beforeUnmount() {
-		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	updated() {
 		this.$nextTick(() => {
 			lucide.createIcons();
 		});
 	},
-	methods: {
-		handleLocaleChange() {
-			this.localeChangeCount++;
-		},
-	},
+	methods: {},
 	template: `
         <div class="drawer fixed top-0 left-0 z-40">
             <input id="navbar-drawer" type="checkbox" class="drawer-toggle" />

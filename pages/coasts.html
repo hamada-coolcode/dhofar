@@ -55,6 +55,10 @@
 <!-- i18n -->
 <script src="./js/i18n/index.js"></script>
 
+<!-- Shared Services -->
+<script src="./js/services/themeService.js"></script>
+<script src="./js/shared/preferences.js"></script>
+
 <!-- Components -->
 <script src="./js/vue/components/Sidebar.js"></script>
 <script src="./js/vue/components/Navbar.js"></script>
@@ -73,17 +77,10 @@
     const {createApp, computed} = Vue;
 
     const app = createApp({
+        mixins: [PreferencesMixin],
         data() {
             return {
-                language: 'en',
-                accent: 'dark',
-                isSettingsOpen: false,
                 selectedPlace: null
-            };
-        },
-        provide() {
-            return {
-                language: computed(() => this.language)
             };
         },
         computed: {
@@ -95,42 +92,6 @@
             this.loadPreferences();
         },
         methods: {
-            loadPreferences() {
-                const savedLanguage = localStorage.getItem('language');
-                const savedAccent = localStorage.getItem('accent');
-
-                if (savedLanguage) this.language = savedLanguage;
-                if (savedAccent) this.accent = savedAccent;
-
-                this.applyPreferences();
-            },
-            applyPreferences() {
-                document.documentElement.setAttribute('data-theme', this.accent);
-                if (this.language === 'ar') {
-                    document.documentElement.setAttribute('dir', 'rtl');
-                    document.title = 'جمال ظفار';
-                } else {
-                    document.documentElement.setAttribute('dir', 'ltr');
-                    document.title = 'The Beauty of Coasts';
-                }
-            },
-            openSettings() {
-                this.isSettingsOpen = true;
-            },
-            closeSettings() {
-                this.isSettingsOpen = false;
-            },
-            setLanguage(lang) {
-                this.language = lang;
-                localStorage.setItem('language', lang);
-                window.i18n.setLocale(lang);
-                this.applyPreferences();
-            },
-            setAccent(accent) {
-                this.accent = accent;
-                localStorage.setItem('accent', accent);
-                this.applyPreferences();
-            },
             handleCardClick(place) {
                 this.selectedPlace = place;
             }
