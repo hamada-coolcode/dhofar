@@ -47,12 +47,6 @@ const AboutTechnologies = {
                     icon: "",
                     description: "The most versatile typing utility.",
                     link: "https://typeitjs.com",
-                },
-                {
-                    name: "ZText",
-                    icon: "",
-                    description: "Awesome super-lightweight 3D text utility.",
-                    link: "https://bennettfeely.com/ztext/",
                 }
             ]
         }

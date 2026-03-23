@@ -20,6 +20,7 @@ const ExploreRightColumn = {
                 icon="cloud-rain"
                 color-class="green"
                 gradient="from-green-600/70"
+                image="./images/index_slider/khareef.png"
                 height-class="h-[110px] sm:h-[140px] lg:h-[240px]"
             />
             <ExploreCardSmall
@@ -29,6 +30,7 @@ const ExploreRightColumn = {
                 icon="sun"
                 color-class="amber"
                 gradient="from-amber-600/70"
+                image="./images/index_slider/deserts.png"
                 height-class="h-[100px] sm:h-[130px] lg:h-[180px]"
             />
             <div class="flex gap-2">
@@ -49,7 +51,7 @@ const ExploreRightColumn = {
                     icon="trees"
                     color-class="emerald"
                     gradient="from-emerald-600/70"
-                    image="./images/khareef/darbat_wadi/index.jpg"
+                    image="./images/index_slider/natural-parks.jpg"
                     height-class="flex-1 h-[100px] sm:h-[130px] lg:h-[180px]"
                 />
             </div>

@@ -13,7 +13,7 @@ const PlacesData = {
                 en: "A stunning valley with freshwater springs, lush greenery, and breathtaking views. Perfect for picnics and boat rides.",
                 ar: "وادي خلاب مع ينابيع مياه عذبة وخضرة مورقة وإطلالات خلابة. مثالي للنزهات وركوب القوارب."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Wadi+Darbat+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122016.8701693176!2d54.43951271404758!3d17.12017284210355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd39503c68b8a25%3A0xbca00994e2b26d34!2sWadi%20Darbat!5e0!3m2!1sen!2som!4v1774251692205!5m2!1sen!2som",
             gallery: [
                 "./images/khareef/darbat_wadi/1.jpg",
                 "./images/khareef/darbat_wadi/2.webp",

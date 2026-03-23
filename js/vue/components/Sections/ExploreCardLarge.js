@@ -21,7 +21,7 @@ const ExploreCardLarge = {
 	},
 	template: `
         <div class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl cursor-pointer h-[160px] sm:h-[200px] lg:h-[380px]">
-            <div class="absolute inset-0 bg-[url('./images/index_slider/khareef.png')] bg-cover bg-center transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"></div>
+            <div class="absolute inset-0 bg-[url('./images/about.webp')] bg-cover bg-center transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-primary/60 via-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
             <div class="relative z-10 h-full flex flex-col justify-center p-4 sm:p-5 lg:p-8">
                 <div class="transform transition-all duration-500 group-hover:translate-x-2">
@@ -31,8 +31,8 @@ const ExploreCardLarge = {
                         </div>
                         <span class="text-primary/90 text-[10px] sm:text-xs font-bold uppercase tracking-wider">{{ resolvedSubtitle }}</span>
                     </div>
-                    <h3 class="text-lg sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 drop-shadow-lg">{{ resolvedTitle }}</h3>
-                    <p v-if="description" class="text-white/80 mb-3 sm:mb-4 text-xs sm:text-sm hidden lg:block">{{ description }}</p>
+                    <h3 class="text-lg sm:text-2xl lg:text-3xl font-black text-violet-500 mb-2 sm:mb-3 drop-shadow-lg">{{ resolvedTitle }}</h3>
+                    <p v-if="description" class="mb-3 sm:mb-4 text-orange-200 text-xs sm:text-sm hidden lg:block">{{ description }}</p>
                     <a :href="link" class="btn btn-sm sm:btn-md btn-outline text-white border-2 border-white/60 hover:bg-white hover:text-primary font-semibold inline-flex items-center">
                         {{ learnMoreText }} <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
                     </a>

@@ -30,6 +30,7 @@ const ExploreLeftColumn = {
                 icon="castle"
                 color-class="accent"
                 gradient="from-accent/50"
+                image="./images/index_slider/ruins.jpg"
                 :height-class="'h-[100px] sm:h-[130px] lg:h-[200px]'"
             />
         </div>
