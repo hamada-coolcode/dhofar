@@ -9,20 +9,24 @@ const ExploreLeftColumn = {
 	computed: {
 		currentLang() { return this.language?.value || this.language || "en"; },
 		ruinsLink() { return this.currentLang === "ar" ? "الآثار" : "Ruins"; },
+		aboutDhofarText() { return window.t("explore.aboutDhofar"); },
+		discoverMoreText() { return window.t("explore.discoverMore"); },
+		aboutDhofarDescription() { return window.t("explore.aboutDhofarDescription"); },
+		historicalLabel() { return window.t("labels.historical"); },
 	},
 	template: `
         <div class="flex flex-col gap-2 w-full lg:w-[40%]">
             <ExploreCardLarge
-                title="Explore Dhofar"
-                subtitle="Discover More"
-                description="Experience the beauty and culture of Oman's southern region"
-                link="./pages/khareef.html"
-                icon="compass"
+                :title="aboutDhofarText"
+                :subtitle="discoverMoreText"
+                :description="aboutDhofarDescription"
+                link="./pages/about.html"
+                icon="info"
                 color="primary"
             />
             <ExploreCardSmall
                 :title="t('section.seeAboutRuins')"
-                :label="'Historical'"
+                :label="historicalLabel"
                 link="./pages/ruins.html"
                 icon="castle"
                 color-class="accent"

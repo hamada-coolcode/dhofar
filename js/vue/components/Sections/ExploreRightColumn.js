@@ -7,12 +7,16 @@ const ExploreRightColumn = {
 	inject: ["language"],
 	computed: {
 		currentLang() { return this.language?.value || this.language || "en"; },
+		monsoonLabel() { return window.t("labels.monsoon"); },
+		desertLabel() { return window.t("labels.desert"); },
+		coastalLabel() { return window.t("labels.coastal"); },
+		natureLabel() { return window.t("labels.nature"); },
 	},
 	template: `
         <div class="flex flex-col gap-2 w-full lg:w-[60%]">
             <ExploreCardSmall
                 :title="t('section.seeAboutKhareef')"
-                label="Monsoon"
+                :label="monsoonLabel"
                 link="./pages/khareef.html"
                 icon="cloud-rain"
                 color-class="green"
@@ -21,7 +25,7 @@ const ExploreRightColumn = {
             />
             <ExploreCardSmall
                 :title="t('section.seeAboutDeserts')"
-                label="Desert"
+                :label="desertLabel"
                 link="./pages/deserts.html"
                 icon="sun"
                 color-class="amber"
@@ -31,7 +35,7 @@ const ExploreRightColumn = {
             <div class="flex gap-2">
                 <ExploreCardSmall
                     :title="t('section.seeAboutCoasts')"
-                    label="Coastal"
+                    :label="coastalLabel"
                     link="./pages/coasts.html"
                     icon="waves"
                     color-class="cyan"
@@ -41,8 +45,8 @@ const ExploreRightColumn = {
                 />
                 <ExploreCardSmall
                     :title="t('section.seeAboutNaturalParks')"
-                    label="Nature"
-                    link="./pages/khareef.html"
+                    :label="natureLabel"
+                    link="./pages/natural-parks.html"
                     icon="trees"
                     color-class="emerald"
                     gradient="from-emerald-600/70"

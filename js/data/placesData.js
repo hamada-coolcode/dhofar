@@ -80,47 +80,6 @@ const PlacesData = {
                 "./images/khareef/Iteen/5.jpg",
             ]
         },
-        {
-            id: 5,
-            category: "khareef",
-            name: { en: "Mughsail Beach", ar: "شاطئ المغسيل" },
-            state: { en: "Salalah", ar: "صلالة" },
-            rating: 4.7,
-            image: "./images/khareef/maghseel/index.jpg",
-            description: {
-                en: "A pristine beach known for its white sand, clear waters, and the famous blowholes that shoot water high into the air.",
-                ar: "شاطئ بكر معروف برماله البيضاء ومياهه الصافية والفتحات الشهيرة التي تطلق الماء عالياً في الهواء."
-            },
-            location: "https://www.google.com/maps/search/?api=1&query=Mughsail+Beach+Salalah+Oman",
-            gallery: [
-                "./images/khareef/maghseel/1.jpg",
-                "./images/khareef/maghseel/2.webp",
-                "./images/khareef/maghseel/3.jpg",
-                "./images/khareef/maghseel/4.jpg",
-            ]
-        },
-        {
-            id: 6,
-            category: "khareef",
-            name: { en: "Naheez", ar: "نهيز" },
-            state: { en: "Salalah", ar: "صلالة" },
-            rating: 4.3,
-            image: "./images/khareef/naheez/index.jpg",
-            description: {
-                en: "A coastal area with beautiful views, traditional fishing spots, and serene beaches.",
-                ar: "منطقة ساحلية بإطلالات جميلة ومواقع صيد تقليدية وشواطئ هادئة."
-            },
-            location: "https://www.google.com/maps/search/?api=1&query=Naheez+Salalah+Oman",
-            gallery: [
-                "./images/khareef/naheez/1.jpg",
-                "./images/khareef/naheez/2.jpg",
-                "./images/khareef/naheez/3.jpg",
-                "./images/khareef/naheez/4.jpg",
-                "./images/khareef/naheez/5.jpg",
-                "./images/khareef/naheez/6.jpg",
-            ]
-        },
-
         // ==================== COASTS (شواطيء) ====================
         {
             id: 7,
@@ -286,10 +245,10 @@ const PlacesData = {
             ]
         },
 
-        // ==================== RESERVES (محميات) ====================
+        // ==================== NATURAL PARKS (محميات طبيعية) ====================
         {
             id: 15,
-            category: "reserves",
+            category: "natural-parks",
             name: { en: "Jebel Samhan Reserve", ar: "محمية جبل سمحان" },
             state: { en: "Dhofar", ar: "ظفار" },
             rating: 4.9,
@@ -316,7 +275,7 @@ const PlacesData = {
         },
         {
             id: 16,
-            category: "reserves",
+            category: "natural-parks",
             name: { en: "Khor Dahariz Reserve", ar: "محمية خور الدهاريز" },
             state: { en: "Salalah", ar: "صلالة" },
             rating: 4.6,
@@ -336,7 +295,7 @@ const PlacesData = {
         },
         {
             id: 17,
-            category: "reserves",
+            category: "natural-parks",
             name: { en: "Khor Mughsail Reserve", ar: "محمية خور مغسيل" },
             state: { en: "Salalah", ar: "صلالة" },
             rating: 4.5,
@@ -354,7 +313,7 @@ const PlacesData = {
         },
         {
             id: 18,
-            category: "reserves",
+            category: "natural-parks",
             name: { en: "Wadi Dawkah Reserve", ar: "محمية وادي دوكة" },
             state: { en: "Salalah", ar: "صلالة" },
             rating: 4.8,

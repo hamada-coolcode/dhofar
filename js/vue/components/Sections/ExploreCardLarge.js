@@ -1,13 +1,26 @@
 // Explore Card Large Component (About)
 const ExploreCardLarge = {
 	name: "ExploreCardLarge",
+	inject: ["language"],
 	props: {
-		title: { type: String, default: "Explore Dhofar" },
-		subtitle: { type: String, default: "Discover More" },
+		title: { type: String, default: null },
+		subtitle: { type: String, default: null },
 		description: { type: String, default: "" },
 		link: { type: String, default: "#" },
 		icon: { type: String, default: "compass" },
 		color: { type: String, default: "primary" },
+	},
+	computed: {
+		currentLang() {
+			return this.language?.value || this.language || "en";
+		},
+		resolvedTitle() {
+			return this.title !== null ? this.title : window.t("explore.exploreDhofar");
+		},
+		resolvedSubtitle() {
+			return this.subtitle !== null ? this.subtitle : window.t("explore.discoverMore");
+		},
+		learnMoreText() { return window.t("explore.learnMore"); },
 	},
 	template: `
         <div class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl cursor-pointer h-[160px] sm:h-[200px] lg:h-[380px]">
@@ -19,12 +32,12 @@ const ExploreCardLarge = {
                         <div class="p-1.5 sm:p-2 rounded-lg bg-primary/20 backdrop-blur-sm">
                             <i :data-lucide="icon" class="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-primary"></i>
                         </div>
-                        <span class="text-primary/90 text-[10px] sm:text-xs font-bold uppercase tracking-wider">{{ subtitle }}</span>
+                        <span class="text-primary/90 text-[10px] sm:text-xs font-bold uppercase tracking-wider">{{ resolvedSubtitle }}</span>
                     </div>
-                    <h3 class="text-lg sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 drop-shadow-lg">{{ title }}</h3>
+                    <h3 class="text-lg sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 drop-shadow-lg">{{ resolvedTitle }}</h3>
                     <p v-if="description" class="text-white/80 mb-3 sm:mb-4 text-xs sm:text-sm hidden lg:block">{{ description }}</p>
                     <a :href="link" class="btn btn-sm sm:btn-md btn-outline text-white border-2 border-white/60 hover:bg-white hover:text-primary font-semibold inline-flex items-center">
-                        Learn More <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
+                        {{ learnMoreText }} <i data-lucide="arrow-right" class="h-4 w-4 ml-2"></i>
                     </a>
                 </div>
             </div>

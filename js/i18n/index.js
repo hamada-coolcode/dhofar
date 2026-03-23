@@ -13,6 +13,7 @@
 			khareef: { en: "Khareef", ar: "الخريف" },
 			deserts: { en: "Deserts", ar: "الصحاري" },
 			coasts: { en: "Coasts", ar: "السواحل" },
+			naturalParks: { en: "Natural Parks", ar: "المحميات الطبيعية" },
 			ruins: { en: "Ruins", ar: "آثار" },
 			about: { en: "About", ar: "حول" },
 		},
@@ -52,6 +53,22 @@
 						ar: "تمشى على طول الشواطئ الرملية، شاهد الدلافين وهي ترقص، واشهد هدير فجوات مغسيل - ساحل ظفار هو ملاذ بجانب البحر.",
 					},
 				},
+				naturalParks: {
+					title: { en: "Natural Parks", ar: "المحميات الطبيعية" },
+					heading: { en: "Wild <br><mark>Natural Parks</mark>", ar: "محميات <br><mark>طبيعية برية</mark>" },
+					description: {
+						en: "Discover protected sanctuaries home to Arabian leopards, migratory birds, and ancient frankincense trees. Dhofar's natural parks preserve nature's treasures.",
+						ar: "اكتشف محميات محمية موطن للنمر العربي والطيور المهاجرة وأشجار اللبان القديمة. محميات ظفار الطبيعية تحفظ كنوز الطبيعة.",
+					},
+				},
+				ruins: {
+					title: { en: "Ruins", ar: "الآثار" },
+					heading: { en: "Ancient <br><mark>Ruins</mark>", ar: "آثار <br><mark>قديمة</mark>" },
+					description: {
+						en: "Walk through millennia at Sumhuram, Al Baleed, and the lost city of Ubar. Dhofar's archaeological treasures tell stories of ancient civilizations and frankincense trade routes.",
+						ar: "سر عبر آلاف السنين في سمهرم والبليد ومدينة أوبار المفقودة. كنوز ظفار الأثرية تحكي قصص الحضارات القديمة وطرق تجارة اللبان.",
+					},
+				},
 			},
 			buttonText: { en: "LEARN MORE", ar: "اقرأ المزيد" },
 		},
@@ -64,6 +81,27 @@
 			seeAboutDeserts: { en: "See About Deserts", ar: "شاهد عن الصحاري" },
 			seeAboutCoasts: { en: "See About Coasts", ar: "شاهد عن السواحل" },
 			seeAboutNaturalParks: { en: "See About Natural Parks", ar: "شاهد عن الحدائق الطبيعية" },
+		},
+
+		// Explore section
+		explore: {
+			discover: { en: "Discover", ar: "اكتشف" },
+			explore: { en: "Explore", ar: "استكشف" },
+			discoverDescription: { en: "Discover the hidden gems of Dhofar", ar: "اكتشف الجواهر المخفية في ظفار" },
+			exploreDhofar: { en: "Explore Dhofar", ar: "استكشف ظفار" },
+			discoverMore: { en: "Discover More", ar: "اكتشف المزيد" },
+			learnMore: { en: "Learn More", ar: "اعرف المزيد" },
+			aboutDhofar: { en: "About Dhofar", ar: "عن ظفار" },
+			aboutDhofarDescription: { en: "Discover the history, culture, and beauty of Oman's southern gem", ar: "اكتشف تاريخ وثقافة وجمال الجوهرة الجنوبية لعمان" },
+		},
+
+		// Explore card labels
+		labels: {
+			historical: { en: "Historical", ar: "تاريخي" },
+			monsoon: { en: "Monsoon", ar: "الخريف" },
+			desert: { en: "Desert", ar: "الصحراء" },
+			coastal: { en: "Coastal", ar: "ساحلي" },
+			nature: { en: "Nature", ar: "الطبيعة" },
 		},
 
 		// Settings modal

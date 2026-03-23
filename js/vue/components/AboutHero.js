@@ -4,7 +4,7 @@ const AboutHero = {
         <div class="hero min-h-screen bg-[url('./images/about/shaser_school.png')] h-[calc(100vh-80px)]">
             <div class="hero-overlay"></div>
             <div class="hero-content flex-col lg:flex-row text-neutral-content">
-                <img src="./images/placeholder.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="Ahmed">
+                <img src="./images/about/author.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="Ahmed">
                 <div class="text-center lg:text-left">
                     <h1 class="text-5xl font-bold">Hi I am Ahmed</h1>
                     <p class="py-6">

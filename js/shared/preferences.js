@@ -21,7 +21,7 @@ const PreferencesMixin = {
         loadPreferences() {
             const prefs = ThemeService.loadPreferences();
             this.language = prefs.language;
-            this.accent = prefs.accent;
+            this.accent = prefs.theme;
             this.applyPreferences();
         },
         applyPreferences() {
@@ -40,8 +40,9 @@ const PreferencesMixin = {
         },
         setAccent(accent) {
             this.accent = accent;
-            ThemeService.setAccent(accent);
-            this.applyPreferences();
+            ThemeService.setTheme(accent);
+            // Dispatch event for components that need to react to theme changes
+            window.dispatchEvent(new CustomEvent('localechange', { detail: { locale: this.language, theme: accent } }));
         },
     },
 };

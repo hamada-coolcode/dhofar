@@ -103,3 +103,12 @@
 body {
 	font-family: var(--font-family-body);
 }
+
+/* Explore Section - Theme-aware background */
+[data-theme="light"] .explore-section {
+	background-color: #f0f0f0;
+}
+
+[data-theme="dark"] .explore-section {
+	background-color: #1f2937;
+}

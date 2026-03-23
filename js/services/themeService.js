@@ -3,20 +3,20 @@
 
 const ThemeService = {
     defaultLanguage: 'en',
-    defaultAccent: 'dark',
+    defaultTheme: 'dark',
 
     loadPreferences() {
         const savedLanguage = localStorage.getItem('language');
-        const savedAccent = localStorage.getItem('accent');
+        const savedTheme = localStorage.getItem('accent');
 
         return {
             language: savedLanguage || this.defaultLanguage,
-            accent: savedAccent || this.defaultAccent,
+            theme: savedTheme || this.defaultTheme,
         };
     },
 
-    applyPreferences(language, accent) {
-        document.documentElement.setAttribute('data-theme', accent);
+    applyPreferences(language, theme) {
+        document.documentElement.setAttribute('data-theme', theme);
         if (language === 'ar') {
             document.documentElement.setAttribute('dir', 'rtl');
             document.title = 'جمال ظفار';
@@ -31,7 +31,8 @@ const ThemeService = {
         window.i18n.setLocale(language);
     },
 
-    setAccent(accent) {
-        localStorage.setItem('accent', accent);
+    setTheme(theme) {
+        localStorage.setItem('accent', theme);
+        document.documentElement.setAttribute('data-theme', theme);
     },
 };
