@@ -1,23 +1,23 @@
-// Theme Service - Manages application preferences (language, theme/accent)
+// Theme Service - Manages application preferences (locale, theme/accent)
 // Used across all HTML pages for consistent preference handling
 
 const ThemeService = {
-    defaultLanguage: 'en',
+    defaultLocale: 'en',
     defaultTheme: 'dark',
 
     loadPreferences() {
-        const savedLanguage = localStorage.getItem('language');
+        const savedLocale = localStorage.getItem('locale');
         const savedTheme = localStorage.getItem('accent');
 
         return {
-            language: savedLanguage || this.defaultLanguage,
+            locale: savedLocale || this.defaultLocale,
             theme: savedTheme || this.defaultTheme,
         };
     },
 
-    applyPreferences(language, theme) {
+    applyPreferences(locale, theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        if (language === 'ar') {
+        if (locale === 'ar') {
             document.documentElement.setAttribute('dir', 'rtl');
             document.title = 'جمال ظفار';
         } else {
@@ -26,9 +26,9 @@ const ThemeService = {
         }
     },
 
-    setLanguage(language) {
-        localStorage.setItem('language', language);
-        window.i18n.setLocale(language);
+    setLocale(locale) {
+        localStorage.setItem('locale', locale);
+        window.i18n.setLocale(locale);
     },
 
     setTheme(theme) {

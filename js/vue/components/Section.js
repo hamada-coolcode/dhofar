@@ -7,7 +7,6 @@ const ViewSection = {
 		ExploreLeftColumn,
 		ExploreRightColumn,
 	},
-	inject: ["language"],
 	data() {
 		return {
 			forceUpdate: 0,
@@ -21,7 +20,7 @@ const ViewSection = {
 		};
 	},
 	computed: {
-		currentLang() { return this.language?.value || this.language || "en"; },
+		currentLang() { return window.i18n.state.locale; },
 		buttonText() { return window.t("section.explore"); },
 		translatedSections() {
 			return this.sections.map((section) => ({ ...section, title: window.t(section.key) }));

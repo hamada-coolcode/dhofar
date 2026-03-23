@@ -5,9 +5,8 @@ const ExploreLeftColumn = {
 		ExploreCardLarge,
 		ExploreCardSmall,
 	},
-	inject: ["language"],
 	computed: {
-		currentLang() { return this.language?.value || this.language || "en"; },
+		currentLang() { return window.i18n.state.locale; },
 		ruinsLink() { return this.currentLang === "ar" ? "الآثار" : "Ruins"; },
 		aboutDhofarText() { return window.t("explore.aboutDhofar"); },
 		discoverMoreText() { return window.t("explore.discoverMore"); },

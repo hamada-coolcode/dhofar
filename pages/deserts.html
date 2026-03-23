@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/settings.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.5.19" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1"></script>
 
     <!-- Vue.js 3 CDN -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/vue@3.5.30/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/lucide@0.577.0"></script>
 </head>
 <body>
 <div id="app">
@@ -27,10 +27,10 @@
     <!-- Settings Modal -->
     <settings-modal
             :is-open="isSettingsOpen"
-            :current-language="language"
+            :current-locale="locale"
             :current-accent="accent"
             @close="closeSettings"
-            @update:language="setLanguage"
+            @update:locale="setLocale"
             @update:accent="setAccent"
     ></settings-modal>
 
@@ -63,17 +63,28 @@
 <script src="./js/data/placesData.js"></script>
 
 <!-- Components -->
-<script src="./js/vue/components/Sidebar.js"></script>
-<script src="./js/vue/components/Navbar.js"></script>
-<script src="./js/vue/components/Settings.js"></script>
-<script src="./js/vue/components/Gallery.js"></script>
-<script src="./js/vue/components/Card.js"></script>
-<script src="./js/vue/components/ContentOverview.js"></script>
-<script src="./js/vue/components/Sections/ExploreHeader.js"></script>
-<script src="./js/vue/components/Sections/ExploreCardLarge.js"></script>
-<script src="./js/vue/components/Sections/ExploreCardSmall.js"></script>
-<script src="./js/vue/components/Sections/ExploreLeftColumn.js"></script>
-<script src="./js/vue/components/Sections/ExploreRightColumn.js"></script>
+<script src="../js/vue/components/Sidebar.js"></script>
+<script src="../js/vue/components/Navbar.js"></script>
+<script src="../js/vue/components/Settings/SettingsHeader.js"></script>
+<script src="../js/vue/components/Settings/SettingsLanguage.js"></script>
+<script src="../js/vue/components/Settings/SettingsTheme.js"></script>
+<script src="../js/vue/components/Settings/Settings.js"></script>
+<script src="../js/vue/components/PlaceCard/PlaceCardImage.js"></script>
+<script src="../js/vue/components/PlaceCard/PlaceCardBody.js"></script>
+<script src="../js/vue/components/PlaceCard/PlaceCard.js"></script>
+<script src="../js/vue/components/PlaceDetails/PlaceDetailsHeader.js"></script>
+<script src="../js/vue/components/PlaceDetails/PlaceDetailsAbout.js"></script>
+<script src="../js/vue/components/PlaceDetails/PlaceDetailsGallery.js"></script>
+<script src="../js/vue/components/PlaceDetails/PlaceDetailsMap.js"></script>
+<script src="../js/vue/components/PlaceDetails/PlaceDetailsActions.js"></script>
+<script src="../js/vue/components/PlaceDetails/PlaceDetailsModal.js"></script>
+<script src="../js/vue/components/Gallery.js"></script>
+<script src="../js/vue/components/ContentOverview.js"></script>
+<script src="../js/vue/components/Sections/ExploreHeader.js"></script>
+<script src="../js/vue/components/Sections/ExploreCardLarge.js"></script>
+<script src="../js/vue/components/Sections/ExploreCardSmall.js"></script>
+<script src="../js/vue/components/Sections/ExploreLeftColumn.js"></script>
+<script src="../js/vue/components/Sections/ExploreRightColumn.js"></script>
 
 <!-- Vue App -->
 <script>
@@ -105,9 +116,19 @@
     app.component('navbar', Navbar);
     app.component('sidebar', Sidebar);
     app.component('settings-modal', Settings);
-    app.component('places-gallery', PlacesGallery);
+    app.component('settings-header', SettingsHeader);
+    app.component('settings-language', SettingsLanguage);
+    app.component('settings-theme', SettingsTheme);
     app.component('place-card', PlaceCard);
-    app.component('place-details', PlaceDetails);
+    app.component('place-card-image', PlaceCardImage);
+    app.component('place-card-body', PlaceCardBody);
+    app.component('place-details', PlaceDetailsModal);
+    app.component('place-details-header', PlaceDetailsHeader);
+    app.component('place-details-about', PlaceDetailsAbout);
+    app.component('place-details-gallery', PlaceDetailsGallery);
+    app.component('place-details-map', PlaceDetailsMap);
+    app.component('place-details-actions', PlaceDetailsActions);
+    app.component('places-gallery', PlacesGallery);
     app.component('explore-header', ExploreHeader);
     app.component('explore-card-large', ExploreCardLarge);
     app.component('explore-card-small', ExploreCardSmall);

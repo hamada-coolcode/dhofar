@@ -76,10 +76,6 @@
 
 	/* Navbar Height */
 	--navbar-height: 5rem;
-
-	/* Theme Colors */
-	--color: ;
-	--bg-color: ;
 }
 /* Themes */
 [data-theme="light"] {

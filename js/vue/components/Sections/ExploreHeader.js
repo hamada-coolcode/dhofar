@@ -1,11 +1,8 @@
 // Explore Header Component
 const ExploreHeader = {
 	name: "ExploreHeader",
-	inject: ["language"],
 	computed: {
-		currentLang() {
-			return this.language?.value || this.language || "en";
-		},
+		currentLang() { return window.i18n.state.locale; },
 		discoverText() { return window.t("explore.discover"); },
 		exploreText() { return window.t("explore.explore"); },
 		descriptionText() { return window.t("explore.discoverDescription"); },

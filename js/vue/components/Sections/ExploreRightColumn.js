@@ -4,9 +4,8 @@ const ExploreRightColumn = {
 	components: {
 		ExploreCardSmall,
 	},
-	inject: ["language"],
 	computed: {
-		currentLang() { return this.language?.value || this.language || "en"; },
+		currentLang() { return window.i18n.state.locale; },
 		monsoonLabel() { return window.t("labels.monsoon"); },
 		desertLabel() { return window.t("labels.desert"); },
 		coastalLabel() { return window.t("labels.coastal"); },

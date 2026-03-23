@@ -1,7 +1,6 @@
 // Explore Card Large Component (About)
 const ExploreCardLarge = {
 	name: "ExploreCardLarge",
-	inject: ["language"],
 	props: {
 		title: { type: String, default: null },
 		subtitle: { type: String, default: null },
@@ -11,9 +10,7 @@ const ExploreCardLarge = {
 		color: { type: String, default: "primary" },
 	},
 	computed: {
-		currentLang() {
-			return this.language?.value || this.language || "en";
-		},
+		currentLang() { return window.i18n.state.locale; },
 		resolvedTitle() {
 			return this.title !== null ? this.title : window.t("explore.exploreDhofar");
 		},

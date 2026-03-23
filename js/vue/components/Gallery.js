@@ -1,7 +1,6 @@
 // Places Gallery Component - Main container with staggered grid layout
 const PlacesGallery = {
 	name: "PlacesGallery",
-	inject: ["language"],
 	props: {
 		category: {
 			type: String,
@@ -15,9 +14,7 @@ const PlacesGallery = {
 		};
 	},
 	computed: {
-		currentLang() {
-			return this.language?.value || this.language || "en";
-		},
+		currentLang() { return window.i18n.state.locale; },
 		filteredPlaces() {
 			if (this.category === "all") {
 				return this.allPlaces;

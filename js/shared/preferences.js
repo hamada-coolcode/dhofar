@@ -4,14 +4,14 @@
 const PreferencesMixin = {
     data() {
         return {
-            language: 'en',
+            locale: 'en',
             accent: 'dark',
             isSettingsOpen: false,
         };
     },
     provide() {
         return {
-            language: Vue.computed(() => this.language),
+            locale: Vue.computed(() => this.locale),
         };
     },
     mounted() {
@@ -20,12 +20,12 @@ const PreferencesMixin = {
     methods: {
         loadPreferences() {
             const prefs = ThemeService.loadPreferences();
-            this.language = prefs.language;
+            this.locale = prefs.locale;
             this.accent = prefs.theme;
             this.applyPreferences();
         },
         applyPreferences() {
-            ThemeService.applyPreferences(this.language, this.accent);
+            ThemeService.applyPreferences(this.locale, this.accent);
         },
         openSettings() {
             this.isSettingsOpen = true;
@@ -33,16 +33,16 @@ const PreferencesMixin = {
         closeSettings() {
             this.isSettingsOpen = false;
         },
-        setLanguage(lang) {
-            this.language = lang;
-            ThemeService.setLanguage(lang);
+        setLocale(locale) {
+            this.locale = locale;
+            ThemeService.setLocale(locale);
             this.applyPreferences();
         },
         setAccent(accent) {
             this.accent = accent;
             ThemeService.setTheme(accent);
             // Dispatch event for components that need to react to theme changes
-            window.dispatchEvent(new CustomEvent('localechange', { detail: { locale: this.language, theme: accent } }));
+            window.dispatchEvent(new CustomEvent('localechange', { detail: { locale: this.locale, theme: accent } }));
         },
     },
 };
