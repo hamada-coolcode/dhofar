@@ -4,14 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A static tourism website for Dhofar, Oman featuring landmarks across categories (Khareef, Deserts, Coasts, Ruins). Built with Vue 3 (CDN) and Tailwind CSS (via DaisyUI), requiring no build step.
+A static tourism website for Dhofar, Oman featuring landmarks across categories (Khareef, Deserts, Coasts, Ruins). Built with Vue 3 and Tailwind CSS (via DaisyUI), requiring no build step. **Fully offline-compatible** - all libraries are stored locally in `vendor/` for `file://` protocol support.
 
 ## Development
 
-This is a pure static site - no build commands, bundlers, or tests. Open HTML files directly in a browser or serve with any static server:
+This is a pure static site - no build commands, bundlers, or tests. **Works offline** - open HTML files directly in a browser:
 
 ```bash
-# Simple static server
+# Open directly via file:// protocol (fully supported)
+# Or serve with any static server if preferred
 python3 -m http.server 8000
 # or
 npx serve .
@@ -62,8 +63,9 @@ computed: {
 - Tailwind CSS utilities
 - Custom fonts in `fonts/` (Impact, Pacifico, Poppins, Tajawal, Ruqaa)
 
-### Libraries (CDN)
-- Vue 3: `unpkg.com/vue@3`
-- Tailwind CSS + DaisyUI 5
-- Lucide icons: `unpkg.com/lucide@latest`
-- TypeIt (typing effect): `cdn.jsdelivr.net/npm/typeit@8`
+### Libraries (Local - vendor/)
+All libraries are stored locally for offline/file:// compatibility:
+- Vue 3: `vendor/vue.global.prod.js` (160K)
+- Tailwind CSS + DaisyUI: `vendor/tailwindcss.browser.js` (254K), `vendor/daisyui.css` (947K)
+- Lucide icons: `vendor/lucide.min.js` (389K)
+- TypeIt (typing effect): `vendor/typeit.umd.min.js` (12K)

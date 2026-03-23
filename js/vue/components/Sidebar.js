@@ -5,12 +5,12 @@ const Sidebar = {
 		return {
 			sidebarItems: [
 				{ key: "nav.home", href: "./index.html", icon: "home" },
-				{ key: "nav.khareef", href: "./pages/khareef.html", icon: "cloud-rain" },
-				{ key: "nav.deserts", href: "./pages/deserts.html", icon: "sun" },
-				{ key: "nav.coasts", href: "./pages/coasts.html", icon: "waves" },
-				{ key: "nav.naturalParks", href: "./pages/natural-parks.html", icon: "trees" },
-				{ key: "nav.ruins", href: "./pages/ruins.html", icon: "castle" },
-				{ key: "nav.about", href: "./pages/about.html", icon: "info" },
+				{ key: "nav.khareef", href: "./khareef.html", icon: "cloud-rain" },
+				{ key: "nav.deserts", href: "./deserts.html", icon: "sun" },
+				{ key: "nav.coasts", href: "./coasts.html", icon: "waves" },
+				{ key: "nav.naturalParks", href: "./natural-parks.html", icon: "trees" },
+				{ key: "nav.ruins", href: "./ruins.html", icon: "castle" },
+				{ key: "nav.about", href: "./about.html", icon: "info" },
 			],
 		};
 	},

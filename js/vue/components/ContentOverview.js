@@ -1,7 +1,7 @@
 // Content Overview Component - Re-exports PlaceDetailsModal for backward compatibility
-import { PlaceDetailsModal } from "./PlaceDetails/index.js";
+// Note: Uses global variables (no ES6 imports/exports) for file:// compatibility
 
 // Alias for backward compatibility
-const PlaceDetails = PlaceDetailsModal;
+const ContentOverview = PlaceDetailsModal;
 
-export { PlaceDetails, PlaceDetailsModal };
+// No exports - components are accessed via global scope when loaded via script tags

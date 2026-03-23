@@ -34,7 +34,7 @@ const PlacesData = {
                 en: "A natural spring with crystal clear water surrounded by lush vegetation and rocky formations.",
                 ar: "نبع طبيعي بمياه صافية كريستالية محاطة بالنباتات الخضراء والتشكيلات الصخرية."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Ayn+Garzeez+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3813.3017739699126!2d54.07051608647689!3d17.106772941791007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd159f47d51197d%3A0x62c57e94b3b2d9f5!2sAin%20Jarziz%20-%20Wilayat%20Salalah!5e0!3m2!1sen!2som!4v1774263943075!5m2!1sen!2som",
             gallery: [
                 "./images/khareef/ain_garzeez/1.jpg",
                 "./images/khareef/ain_garzeez/2.jpg",
@@ -53,7 +53,7 @@ const PlacesData = {
                 en: "A serene natural spring with tranquil pools and abundant greenery, perfect for relaxation.",
                 ar: "نبع طبيعي هادئ مع برك ماء وخضرة وفيرة، مثالي للاسترخاء."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Ayn+Sahlanot+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.4533889702875!2d54.1757340761035!3d17.148142383698726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd3e5f4728797b1%3A0x17927c9aefc80af!2sAin%20Sahanoot!5e0!3m2!1sen!2som!4v1774264995508!5m2!1sen!2som",
             gallery: [
                 "./images/khareef/ain_sahlanot/1.avif",
                 "./images/khareef/ain_sahlanot/2.jpeg",
@@ -92,7 +92,7 @@ const PlacesData = {
                 en: "A beautiful coastal beach with pristine waters and stunning views, perfect for relaxation and water activities.",
                 ar: "شاطئ ساحلي جميل بمياه نقية وإطلالات خلابة، مثالي للاسترخاء والأنشطة المائية."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Al+Baleed+Beach+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.3963600769644!2d54.12641968646481!3d17.004217442097865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd3dfd7d1803c6d%3A0x1271e963c2e36b58!2sAL%20BALEED%20BEACH!5e0!3m2!1sen!2som!4v1774265319207!5m2!1sen!2som",
             gallery: [
                 "./images/coasts/al-baleed-beach/1.jpg",
                 "./images/coasts/al-baleed-beach/2.jpg",
@@ -113,7 +113,7 @@ const PlacesData = {
                 en: "A serene beach known for its natural beauty and peaceful atmosphere, ideal for family gatherings.",
                 ar: "شاطئ هادئ معروف بجماله الطبيعي وأجوائه الهادئة، مثالي للتجمعات العائلية."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Al+Dahariz+Beach+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15261.045626278134!2d54.16654646543761!3d17.010843141014952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd3ddd6c20035d5%3A0xf37e6fb6b92fc839!2sDahariz%20Beach%20-%20Khor%20End!5e0!3m2!1sen!2som!4v1774265393699!5m2!1sen!2som",
             gallery: [
                 "./images/coasts/al-dahariz-beach/1.jpg",
                 "./images/coasts/al-dahariz-beach/2.jpg",
@@ -133,7 +133,7 @@ const PlacesData = {
                 en: "A picturesque beach near Taqah town, offering beautiful coastal scenery and traditional fishing spots.",
                 ar: "شاطئ خلاب بالقرب من بلدة طاقة، يقدم مناظر ساحلية جميلة ومواقع صيد تقليدية."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Taqah+Beach+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.800099003528!2d54.391641176101345!3d17.03347268379465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd3c11b7e6cebdf%3A0xa9d75114bb6dc7b4!2sTaqah%20Beach!5e0!3m2!1sen!2som!4v1774265443010!5m2!1sen!2som",
             gallery: [
                 "./images/coasts/taqah-beach/1.jpg",
                 "./images/coasts/taqah-beach/2.jpg",
@@ -155,7 +155,7 @@ const PlacesData = {
                 en: "Famous beach known for its white sand, clear waters, and the legendary blowholes.",
                 ar: "شاطئ شهير معروف برماله البيضاء ومياهه الصافية والفتحات البحرية الأسطورية."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Mughsail+Beach+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7635.869075044675!2d53.772411345701265!3d16.8791325356957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd16c8116814b8f%3A0xc1dea988a9e90a00!2sMughsail%20Beach!5e0!3m2!1sen!2som!4v1774265498443!5m2!1sen!2som",
             gallery: [
                 "./images/coasts/mughsail-beach/1.jpg",
                 "./images/coasts/mughsail-beach/2.jpg",
@@ -218,7 +218,7 @@ const PlacesData = {
                 en: "A beautiful desert area with traditional camping spots and stunning desert scenery.",
                 ar: "منطقة صحراوية جميلة مع مواقع تخييم تقليدية ومناظر صحراوية خلابة."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Al+Hashman+Desert+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15549.102873586702!2d53.05791617886886!3d18.439113369815374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e87c58d5d020c6b%3A0x3b772ed488d33d3!2sOase%20al%20hashman%20oman!5e0!3m2!1sen!2som!4v1774265223514!5m2!1sen!2som",
             gallery: [
                 "./images/deserts/al-hashman/1.jpg",
                 "./images/deserts/al-hashman/2.jpg",
@@ -434,7 +434,7 @@ const PlacesData = {
         {
             id: 24,
             category: "ruins",
-            name: { en: "Shisr & Bar", ar: "موقع شصر وبار" },
+            name: { en: "Shisr Wubar", ar: "موقع شصر وبار" },
             state: { en: "Dhofar", ar: "ظفار" },
             rating: 4.6,
             image: "./images/ruins/shisr-bar/index.jpg",

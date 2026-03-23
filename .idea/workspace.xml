@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dhofar.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/data/placesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/data/placesData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/i18n/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/ContentOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ContentOverview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/PlaceDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/PlaceDetails/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/coasts.html" beforeDir="false" afterPath="$PROJECT_DIR$/coasts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/deserts.html" beforeDir="false" afterPath="$PROJECT_DIR$/deserts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/khareef.html" beforeDir="false" afterPath="$PROJECT_DIR$/khareef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/natural-parks.html" beforeDir="false" afterPath="$PROJECT_DIR$/natural-parks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ruins.html" beforeDir="false" afterPath="$PROJECT_DIR$/ruins.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="38vSbe9ICXmZ3C58zD6z6in8P7l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hamada/projects/dhofar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css/index" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/css/index" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.32098.39" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="" />
+      <created>1769678630029</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769678630029</updated>
+      <workItem from="1769678631298" duration="813000" />
+      <workItem from="1769679469222" duration="129000" />
+      <workItem from="1769679615169" duration="359000" />
+      <workItem from="1769679987827" duration="11835000" />
+      <workItem from="1769766702358" duration="23632000" />
+      <workItem from="1770289022424" duration="5039000" />
+      <workItem from="1770959032670" duration="78000" />
+      <workItem from="1770959172839" duration="4591000" />
+      <workItem from="1770997091825" duration="19000" />
+      <workItem from="1770997112198" duration="20000" />
+      <workItem from="1772885847013" duration="27486000" />
+      <workItem from="1773384837479" duration="25091000" />
+      <workItem from="1773889644727" duration="27965000" />
+      <workItem from="1774065188473" duration="27638000" />
+      <workItem from="1774111944501" duration="30839000" />
+      <workItem from="1774237362717" duration="30208000" />
+    </task>
+    <task id="LOCAL-00001" summary="changing how svg is written to be more concise">
+      <option name="closed" value="true" />
+      <created>1773313359675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773313359676</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adding lucide icons and customizing the navbar and sidebar with fixing some carousel issues.">
+      <option name="closed" value="true" />
+      <created>1773345311832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773345311832</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add settings modal with language/theme/accent customization and carousel translations">
+      <option name="closed" value="true" />
+      <created>1773398330610</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773398330610</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add mobile responsive design to carousel and remove progress bar">
+      <option name="closed" value="true" />
+      <created>1773399907696</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773399907696</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Inline carousel data and add comprehensive Arabic translations with RTL support">
+      <option name="closed" value="true" />
+      <created>1773403946002</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773403946002</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Simplify settings modal by merging theme and accent color options">
+      <option name="closed" value="true" />
+      <created>1773425574248</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773425574248</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implement full page structure with Vue components and settings modal for all category pages">
+      <option name="closed" value="true" />
+      <created>1773431903134</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773431903134</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Reformat JavaScript codebase with consistent indentation and add gallery components&#10;&#10;- Reformat all JavaScript files from 4-space to tab indentation for consistency&#10;- Add PlacesGallery component with filterable place cards by category (khareef, deserts, coasts)&#10;- Add PlaceCard component with 3D hover effects and rating badges&#10;- Add PlaceDetails modal component with image carousel, map integration, and full descriptions&#10;- Reduce carousel slides from 6 to 3 (khareef, deserts, coasts) with updated translations&#10;- Update Sidebar to use base href-relative paths for all navigation links&#10;- Consolidate sidebar items into single array removing index/page path duplication&#10;- Add comprehensive place data including Wadi Darbat, Mughsail Beach, Jebel Samhan, and historical sites&#10;- Include bilingual (English/Arabic) support for all new components">
+      <option name="closed" value="true" />
+      <created>1773909614267</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773909614267</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Implement centralized i18n system with reactive translations and expand place data&#10;&#10;- Create global i18n system in `js/i18n/index.js` with Vue reactive state and `window.t()` translation function&#10;- Add comprehensive translation keys for all UI elements (nav, carousel, settings, place details, sections)&#10;- Refactor all components to use `window.t()` instead of inline translation objects&#10;- Add `localechange` event system for reactive translation updates across components&#10;- Expand Gallery.js with 6 new Khareef places (Ayn Garzeez, Ayn Sahlanot, Iteen Park, Mughsail Beach, Naheez) including images and Google Maps embeds&#10;- Update ContentOverview.js to render place galleries dynamically from data&#10;- Add PlaceCategorySection.js component for reusable video hero sections&#10;- Implement &quot;Explore More&quot; section on index page with flexbox grid layout showcasing all categories&#10;- Update all page templates to load i18n system and sync with `window.i18n.setLocale()`&#10;- Add custom CSS animations (spin-slow, gradient) for enhanced UI effects&#10;- Create placeholder ruins.html page structure">
+      <option name="closed" value="true" />
+      <created>1774094409202</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1774094409202</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Refactor explore section into reusable Vue components and add About page with hero and technologies sections">
+      <option name="closed" value="true" />
+      <created>1774169158273</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1774169158273</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Extract preferences and theme management into shared services and mixin">
+      <option name="closed" value="true" />
+      <created>1774176997720</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1774176997720</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Extract places data to centralized module and implement image carousel in place details&#10;&#10;- Create PlacesData.js with comprehensive data for all categories (khareef, coasts, deserts, reserves, ruins)&#10;- Add structured place objects with bilingual names, descriptions, locations, and image galleries&#10;- Implement image carousel with navigation controls and slide indicators in ContentOverview component&#10;- Update Gallery component to use centralized PlacesData instead of inline data&#10;- Add PlacesData script import to all category pages (khareef, coasts, deserts, ruins)&#10;- Enhance place details modal with gallery slideshow functionality and improved image display">
+      <option name="closed" value="true" />
+      <created>1774199212527</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1774199212527</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add Natural Parks category page and integrate ruins section with translations&#10;&#10;Implement dedicated Natural Parks page with full component structure, recategorize places data from 'reserves' to 'natural-parks', and add Ruins section to explore interface. Update i18n with Natural Parks and Ruins translations, enhance explore components with dynamic labels, and add theme-aware styling for explore section. Refactor theme service to use consistent 'theme' terminology and add locale change event dispatching for reactive component updates.">
+      <option name="closed" value="true" />
+      <created>1774240127107</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1774240127107</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactor Vue components into modular structure and update CDN dependencies to specific versions">
+      <option name="closed" value="true" />
+      <created>1774251222216</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1774251222216</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component">
+      <option name="closed" value="true" />
+      <created>1774260367644</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1774260367644</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changing how svg is written to be more concise" />
+    <MESSAGE value="adding lucide icons and customizing the navbar and sidebar with fixing some carousel issues." />
+    <MESSAGE value="Add settings modal with language/theme/accent customization and carousel translations" />
+    <MESSAGE value="Add mobile responsive design to carousel and remove progress bar" />
+    <MESSAGE value="Inline carousel data and add comprehensive Arabic translations with RTL support" />
+    <MESSAGE value="Simplify settings modal by merging theme and accent color options" />
+    <MESSAGE value="Implement full page structure with Vue components and settings modal for all category pages" />
+    <MESSAGE value="Reformat JavaScript codebase with consistent indentation and add gallery components&#10;&#10;- Reformat all JavaScript files from 4-space to tab indentation for consistency&#10;- Add PlacesGallery component with filterable place cards by category (khareef, deserts, coasts)&#10;- Add PlaceCard component with 3D hover effects and rating badges&#10;- Add PlaceDetails modal component with image carousel, map integration, and full descriptions&#10;- Reduce carousel slides from 6 to 3 (khareef, deserts, coasts) with updated translations&#10;- Update Sidebar to use base href-relative paths for all navigation links&#10;- Consolidate sidebar items into single array removing index/page path duplication&#10;- Add comprehensive place data including Wadi Darbat, Mughsail Beach, Jebel Samhan, and historical sites&#10;- Include bilingual (English/Arabic) support for all new components" />
+    <MESSAGE value="Implement centralized i18n system with reactive translations and expand place data&#10;&#10;- Create global i18n system in `js/i18n/index.js` with Vue reactive state and `window.t()` translation function&#10;- Add comprehensive translation keys for all UI elements (nav, carousel, settings, place details, sections)&#10;- Refactor all components to use `window.t()` instead of inline translation objects&#10;- Add `localechange` event system for reactive translation updates across components&#10;- Expand Gallery.js with 6 new Khareef places (Ayn Garzeez, Ayn Sahlanot, Iteen Park, Mughsail Beach, Naheez) including images and Google Maps embeds&#10;- Update ContentOverview.js to render place galleries dynamically from data&#10;- Add PlaceCategorySection.js component for reusable video hero sections&#10;- Implement &quot;Explore More&quot; section on index page with flexbox grid layout showcasing all categories&#10;- Update all page templates to load i18n system and sync with `window.i18n.setLocale()`&#10;- Add custom CSS animations (spin-slow, gradient) for enhanced UI effects&#10;- Create placeholder ruins.html page structure" />
+    <MESSAGE value="Refactor explore section into reusable Vue components and add About page with hero and technologies sections" />
+    <MESSAGE value="Extract preferences and theme management into shared services and mixin" />
+    <MESSAGE value="Extract places data to centralized module and implement image carousel in place details&#10;&#10;- Create PlacesData.js with comprehensive data for all categories (khareef, coasts, deserts, reserves, ruins)&#10;- Add structured place objects with bilingual names, descriptions, locations, and image galleries&#10;- Implement image carousel with navigation controls and slide indicators in ContentOverview component&#10;- Update Gallery component to use centralized PlacesData instead of inline data&#10;- Add PlacesData script import to all category pages (khareef, coasts, deserts, ruins)&#10;- Enhance place details modal with gallery slideshow functionality and improved image display" />
+    <MESSAGE value="Add Natural Parks category page and integrate ruins section with translations&#10;&#10;Implement dedicated Natural Parks page with full component structure, recategorize places data from 'reserves' to 'natural-parks', and add Ruins section to explore interface. Update i18n with Natural Parks and Ruins translations, enhance explore components with dynamic labels, and add theme-aware styling for explore section. Refactor theme service to use consistent 'theme' terminology and add locale change event dispatching for reactive component updates." />
+    <MESSAGE value="Refactor Vue components into modular structure and update CDN dependencies to specific versions" />
+    <MESSAGE value="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component" />
+  </component>
+</project>

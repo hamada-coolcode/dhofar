@@ -1,16 +1,4 @@
 // PlaceDetails Components - Export all sub-components
-import PlaceDetailsModal from "./PlaceDetailsModal.js";
-import PlaceDetailsHeader from "./PlaceDetailsHeader.js";
-import PlaceDetailsAbout from "./PlaceDetailsAbout.js";
-import PlaceDetailsGallery from "./PlaceDetailsGallery.js";
-import PlaceDetailsMap from "./PlaceDetailsMap.js";
-import PlaceDetailsActions from "./PlaceDetailsActions.js";
+// Note: Uses global variables (no ES6 imports/exports) for file:// compatibility
 
-export {
-	PlaceDetailsModal,
-	PlaceDetailsHeader,
-	PlaceDetailsAbout,
-	PlaceDetailsGallery,
-	PlaceDetailsMap,
-	PlaceDetailsActions,
-};
+// No exports needed - components are accessed via global scope when loaded via script tags

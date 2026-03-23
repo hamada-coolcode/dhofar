@@ -91,8 +91,8 @@
 			exploreDhofar: { en: "Explore Dhofar", ar: "استكشف ظفار" },
 			discoverMore: { en: "Discover More", ar: "اكتشف المزيد" },
 			learnMore: { en: "Learn More", ar: "اعرف المزيد" },
-			aboutDhofar: { en: "About Site", ar: "عن ظفار" },
-			aboutDhofarDescription: { en: "Discover the author who made this, and the programming technologies used in it.", ar: "اكتشف تاريخ وثقافة وجمال الجوهرة الجنوبية لعمان" },
+			aboutDhofar: { en: "About Site", ar: "عن الموقع" },
+			aboutDhofarDescription: { en: "Discover the author who made this, and the programming technologies used in it.", ar: "اكتشف المؤلف الذي صنع هذا الموقع وتقنيات البرمجة المستخدمة فيه." },
 		},
 
 		// Explore card labels
@@ -128,7 +128,7 @@
 		// Category pages
 		pages: {
 			khareef: {
-				title: { en: "The Beauty of Khofar", ar: "جمال الخريف" },
+				title: { en: "The Beauty of Khareef", ar: "جمال الخريف" },
 			},
 			deserts: {
 				title: { en: "The Beauty of Deserts", ar: "جمال الصحاري" },
@@ -137,7 +137,10 @@
 				title: { en: "The Beauty of Coasts", ar: "جمال السواحل" },
 			},
 			ruins: {
-				title: { en: "The Beauty of Ruins", ar: "جمال الآثار" },
+				title: { en: "Historical Ruins of Dhofar", ar: "الآثار التاريخية في ظفار" },
+			},
+			naturalParks: {
+				title: { en: "Natural Parks of Dhofar", ar: "المحميات الطبيعية في ظفار" },
 			},
 		},
 
