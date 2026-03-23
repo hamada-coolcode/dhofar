@@ -23,7 +23,7 @@
     <body>
         <div id="app">
             <!-- Sidebar Drawer -->
-            <sidebar></sidebar>
+            <Sidebar></Sidebar>
 
             <!-- Navigation Bar -->
             <navbar :on-settings-click="openSettings"></navbar>
@@ -111,7 +111,7 @@
 
             // Register components
             app.component('navbar', Navbar);
-            app.component('sidebar', Sidebar);
+            app.component('Sidebar', Sidebar);
             app.component('carousel', Carousel);
             app.component('view-section', ViewSection);
             app.component('settings-modal', Settings);

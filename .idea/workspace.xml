@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dhofar.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+    <list default="true" id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/data/placesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/data/placesData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/i18n/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/ContentOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ContentOverview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/PlaceDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/PlaceDetails/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/coasts.html" beforeDir="false" afterPath="$PROJECT_DIR$/coasts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/deserts.html" beforeDir="false" afterPath="$PROJECT_DIR$/deserts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/khareef.html" beforeDir="false" afterPath="$PROJECT_DIR$/khareef.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/natural-parks.html" beforeDir="false" afterPath="$PROJECT_DIR$/natural-parks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ruins.html" beforeDir="false" afterPath="$PROJECT_DIR$/ruins.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/Section.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +97,7 @@
       <workItem from="1773889644727" duration="27965000" />
       <workItem from="1774065188473" duration="27638000" />
       <workItem from="1774111944501" duration="30839000" />
-      <workItem from="1774237362717" duration="30208000" />
+      <workItem from="1774237362717" duration="31907000" />
     </task>
     <task id="LOCAL-00001" summary="changing how svg is written to be more concise">
       <option name="closed" value="true" />
@@ -234,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774260367644</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory">
+      <option name="closed" value="true" />
+      <created>1774287001209</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1774287001209</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +260,7 @@
     <MESSAGE value="Add Natural Parks category page and integrate ruins section with translations&#10;&#10;Implement dedicated Natural Parks page with full component structure, recategorize places data from 'reserves' to 'natural-parks', and add Ruins section to explore interface. Update i18n with Natural Parks and Ruins translations, enhance explore components with dynamic labels, and add theme-aware styling for explore section. Refactor theme service to use consistent 'theme' terminology and add locale change event dispatching for reactive component updates." />
     <MESSAGE value="Refactor Vue components into modular structure and update CDN dependencies to specific versions" />
     <MESSAGE value="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component" />
+    <MESSAGE value="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory" />
   </component>
 </project>

@@ -11,11 +11,11 @@ const ViewSection = {
 		return {
 			forceUpdate: 0,
 			sections: [
-				{ key: "nav.khareef", link: "./pages/khareef.html", videoLink: "./videos/khareef.mp4" },
-				{ key: "nav.deserts", link: "./pages/deserts.html", videoLink: "./videos/deserts.mp4" },
-				{ key: "nav.coasts", link: "./pages/coasts.html", videoLink: "./videos/coasts.mp4" },
-				{ key: "nav.naturalParks", link: "./pages/natural-parks.html", videoLink: "./videos/natural-parks.mp4" },
-				{ key: "nav.ruins", link: "./pages/ruins.html", videoLink: "./videos/ruins.mp4" },
+				{ key: "nav.khareef", link: "./khareef.html", videoLink: "./videos/khareef.mp4" },
+				{ key: "nav.deserts", link: "./deserts.html", videoLink: "./videos/deserts.mp4" },
+				{ key: "nav.coasts", link: "./coasts.html", videoLink: "./videos/coasts.mp4" },
+				{ key: "nav.naturalParks", link: "./natural-parks.html", videoLink: "./videos/natural-parks.mp4" },
+				{ key: "nav.ruins", link: "./ruins.html", videoLink: "./videos/ruins.mp4" },
 			],
 		};
 	},
