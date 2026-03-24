@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="Update navigation links to use root-relative paths and standardize Sidebar component naming&#10;&#10;- Change section links from './pages/' to './' directory structure (khareef, deserts, coasts, natural-parks, ruins)&#10;- Standardize Sidebar component registration from lowercase 'sidebar' to PascalCase 'Sidebar'&#10;- Update component usage in index.html template to match PascalCase convention">
+    <list default="true" id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="Refactor services into pure modules and reorganize component structure&#10;&#10;- Refactor i18n service into pure locale management module with clear responsibilities&#10;- Refactor ThemeService into pure theme management module (removed locale handling)&#10;- Update PreferencesMixin to orchestrate between i18n and ThemeService&#10;- Add comprehensive JSDoc comments to all service methods&#10;- Rename Section.js to ViewSections.js for clarity&#10;- Move Sections/ components to ViewSections/ directory&#10;- Standardize localStorage keys: 'language' → 'locale', maintain 'accent' for theme&#10;- Add apply() method to i18n for document-level locale changes&#10;- Separate concerns: i18n handles locale/translations, ThemeService handles theme only&#10;- Update component imports to reflect new ViewSections directory structure&#10;- Remove unused CSS gradient animation and theme-specific explore section styles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coasts.html" beforeDir="false" afterPath="$PROJECT_DIR$/coasts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deserts.html" beforeDir="false" afterPath="$PROJECT_DIR$/deserts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/i18n/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/services/themeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/services/themeService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/shared/preferences.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shared/preferences.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreCardLarge.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreCardLarge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreCardSmall.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreCardSmall.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreLeftColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreLeftColumn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreRightColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreRightColumn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/PlaceCategorySection.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/PlaceCategorySection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/layout/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/layout/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/layout/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/layout/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/khareef.html" beforeDir="false" afterPath="$PROJECT_DIR$/khareef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/natural-parks.html" beforeDir="false" afterPath="$PROJECT_DIR$/natural-parks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruins.html" beforeDir="false" afterPath="$PROJECT_DIR$/ruins.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +106,7 @@
       <workItem from="1774065188473" duration="27638000" />
       <workItem from="1774111944501" duration="30839000" />
       <workItem from="1774237362717" duration="34596000" />
-      <workItem from="1774370914916" duration="6072000" />
+      <workItem from="1774370914916" duration="6797000" />
     </task>
     <task id="LOCAL-00001" summary="changing how svg is written to be more concise">
       <option name="closed" value="true" />
@@ -246,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774288600810</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Refactor services into pure modules and reorganize component structure&#10;&#10;- Refactor i18n service into pure locale management module with clear responsibilities&#10;- Refactor ThemeService into pure theme management module (removed locale handling)&#10;- Update PreferencesMixin to orchestrate between i18n and ThemeService&#10;- Add comprehensive JSDoc comments to all service methods&#10;- Rename Section.js to ViewSections.js for clarity&#10;- Move Sections/ components to ViewSections/ directory&#10;- Standardize localStorage keys: 'language' → 'locale', maintain 'accent' for theme&#10;- Add apply() method to i18n for document-level locale changes&#10;- Separate concerns: i18n handles locale/translations, ThemeService handles theme only&#10;- Update component imports to reflect new ViewSections directory structure&#10;- Remove unused CSS gradient animation and theme-specific explore section styles">
+      <option name="closed" value="true" />
+      <created>1774377301401</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1774377301401</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +287,7 @@
     <MESSAGE value="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component" />
     <MESSAGE value="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory" />
     <MESSAGE value="Update navigation links to use root-relative paths and standardize Sidebar component naming&#10;&#10;- Change section links from './pages/' to './' directory structure (khareef, deserts, coasts, natural-parks, ruins)&#10;- Standardize Sidebar component registration from lowercase 'sidebar' to PascalCase 'Sidebar'&#10;- Update component usage in index.html template to match PascalCase convention" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update navigation links to use root-relative paths and standardize Sidebar component naming&#10;&#10;- Change section links from './pages/' to './' directory structure (khareef, deserts, coasts, natural-parks, ruins)&#10;- Standardize Sidebar component registration from lowercase 'sidebar' to PascalCase 'Sidebar'&#10;- Update component usage in index.html template to match PascalCase convention" />
+    <MESSAGE value="Refactor services into pure modules and reorganize component structure&#10;&#10;- Refactor i18n service into pure locale management module with clear responsibilities&#10;- Refactor ThemeService into pure theme management module (removed locale handling)&#10;- Update PreferencesMixin to orchestrate between i18n and ThemeService&#10;- Add comprehensive JSDoc comments to all service methods&#10;- Rename Section.js to ViewSections.js for clarity&#10;- Move Sections/ components to ViewSections/ directory&#10;- Standardize localStorage keys: 'language' → 'locale', maintain 'accent' for theme&#10;- Add apply() method to i18n for document-level locale changes&#10;- Separate concerns: i18n handles locale/translations, ThemeService handles theme only&#10;- Update component imports to reflect new ViewSections directory structure&#10;- Remove unused CSS gradient animation and theme-specific explore section styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor services into pure modules and reorganize component structure&#10;&#10;- Refactor i18n service into pure locale management module with clear responsibilities&#10;- Refactor ThemeService into pure theme management module (removed locale handling)&#10;- Update PreferencesMixin to orchestrate between i18n and ThemeService&#10;- Add comprehensive JSDoc comments to all service methods&#10;- Rename Section.js to ViewSections.js for clarity&#10;- Move Sections/ components to ViewSections/ directory&#10;- Standardize localStorage keys: 'language' → 'locale', maintain 'accent' for theme&#10;- Add apply() method to i18n for document-level locale changes&#10;- Separate concerns: i18n handles locale/translations, ThemeService handles theme only&#10;- Update component imports to reflect new ViewSections directory structure&#10;- Remove unused CSS gradient animation and theme-specific explore section styles" />
   </component>
 </project>
