@@ -1,5 +1,5 @@
 // View Section Component
-const ViewSection = {
+const ViewSections = {
 	name: "ViewSection",
 	components: {
 		PlaceCategorySection,
@@ -9,7 +9,6 @@ const ViewSection = {
 	},
 	data() {
 		return {
-			forceUpdate: 0,
 			sections: [
 				{ key: "nav.khareef", link: "./khareef.html", videoLink: "./videos/khareef.mp4" },
 				{ key: "nav.deserts", link: "./deserts.html", videoLink: "./videos/deserts.mp4" },
@@ -28,22 +27,13 @@ const ViewSection = {
 	},
 	methods: {
 		t(key) { return window.t(key); },
-		handleLocaleChange() {
-			this.forceUpdate++;
-		},
-	},
-	mounted() {
-		window.addEventListener("localechange", this.handleLocaleChange);
-	},
-	beforeUnmount() {
-		window.removeEventListener("localechange", this.handleLocaleChange);
 	},
 	template: `
-        <div :key="forceUpdate">
-            <section v-for="(section, index) in translatedSections" :key="index" class="relative w-full h-[calc(100vh-80px)] flex items-center justify-center p-0 overflow-hidden">
+        <div>
+            <section v-for="(section, index) in translatedSections" :key="index" class="relative w-full h-[calc(100vh-80px)] p-0 overflow-hidden">
                 <PlaceCategorySection :videoLink="section.videoLink" :title="section.title" :buttonText="buttonText" :link="section.link" />
             </section>
-            <section class="explore-section relative w-full py-4 sm:py-8 lg:py-12 px-3 sm:px-6">
+            <section class="relative w-full py-4 sm:py-8 lg:py-12 px-3 sm:px-6">
                 <div class="max-w-[1200px] mx-auto w-full">
                     <ExploreHeader />
                     <div class="flex flex-col lg:flex-row gap-2 sm:gap-3 lg:gap-4">

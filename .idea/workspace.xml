@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory">
+    <list default="true" id="03ee937e-e01a-4531-b309-0861032ed8e6" name="Changes" comment="Update navigation links to use root-relative paths and standardize Sidebar component naming&#10;&#10;- Change section links from './pages/' to './' directory structure (khareef, deserts, coasts, natural-parks, ruins)&#10;- Standardize Sidebar component registration from lowercase 'sidebar' to PascalCase 'Sidebar'&#10;- Update component usage in index.html template to match PascalCase convention">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/general.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/vue/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/i18n/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/i18n/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/services/themeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/services/themeService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shared/preferences.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shared/preferences.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreCardLarge.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreCardLarge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreCardSmall.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreCardSmall.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreLeftColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreLeftColumn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/ExploreRightColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/ExploreRightColumn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vue/components/Sections/PlaceCategorySection.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vue/components/ViewSections/PlaceCategorySection.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,31 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/hamada/projects/dhofar&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/hamada/projects/dhofar",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/css/index" />
@@ -97,7 +107,8 @@
       <workItem from="1773889644727" duration="27965000" />
       <workItem from="1774065188473" duration="27638000" />
       <workItem from="1774111944501" duration="30839000" />
-      <workItem from="1774237362717" duration="31907000" />
+      <workItem from="1774237362717" duration="34596000" />
+      <workItem from="1774370914916" duration="6072000" />
     </task>
     <task id="LOCAL-00001" summary="changing how svg is written to be more concise">
       <option name="closed" value="true" />
@@ -227,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774287001209</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update navigation links to use root-relative paths and standardize Sidebar component naming&#10;&#10;- Change section links from './pages/' to './' directory structure (khareef, deserts, coasts, natural-parks, ruins)&#10;- Standardize Sidebar component registration from lowercase 'sidebar' to PascalCase 'Sidebar'&#10;- Update component usage in index.html template to match PascalCase convention">
+      <option name="closed" value="true" />
+      <created>1774288600810</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1774288600810</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +280,7 @@
     <MESSAGE value="Refactor Vue components into modular structure and update CDN dependencies to specific versions" />
     <MESSAGE value="Update explore section styling and fix data inconsistencies&#10;&#10;- Change ExploreCardLarge background image from khareef to about.webp&#10;- Update title and description colors to violet-500 and orange-200&#10;- Add background images to ExploreCardSmall components (khareef, deserts, natural-parks, ruins)&#10;- Fix Wadi Darbat location from search URL to embedded map URL&#10;- Update About section translations to reference site author and technologies&#10;- Remove ZText from technologies list in AboutTechnologies component" />
     <MESSAGE value="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Vue.js framework and TypeIt library, implement dynamic content rendering&#10;&#10;- Add Vue.js 3.5.30 production build for reactive component system&#10;- Add TypeIt 8.8.7 for animated typing effects on hero sections&#10;- Refactor all HTML pages to use Vue components and CDN-based architecture&#10;- Implement dynamic place details with image carousels and interactive maps&#10;- Add comprehensive Arabic translations with RTL support for all UI elements&#10;- Create reusable Vue components: Navbar, Sidebar, Hero, PlaceCard, PlaceDetails&#10;- Integrate Google Maps embeds for location display in place details&#10;- Update all category pages (khareef, deserts, coasts, ruins, natural-parks) with Vue structure&#10;- Enhance About page with animated hero section and technology showcase&#10;- Centralize places data in placesData.js module for better maintainability&#10;- Add settings modal with language, theme, and accent color customization&#10;- Implement responsive design improvements across all pages&#10;- Update navigation links to use relative paths without 'pages/' directory" />
+    <MESSAGE value="Update navigation links to use root-relative paths and standardize Sidebar component naming&#10;&#10;- Change section links from './pages/' to './' directory structure (khareef, deserts, coasts, natural-parks, ruins)&#10;- Standardize Sidebar component registration from lowercase 'sidebar' to PascalCase 'Sidebar'&#10;- Update component usage in index.html template to match PascalCase convention" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update navigation links to use root-relative paths and standardize Sidebar component naming&#10;&#10;- Change section links from './pages/' to './' directory structure (khareef, deserts, coasts, natural-parks, ruins)&#10;- Standardize Sidebar component registration from lowercase 'sidebar' to PascalCase 'Sidebar'&#10;- Update component usage in index.html template to match PascalCase convention" />
   </component>
 </project>

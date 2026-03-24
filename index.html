@@ -23,7 +23,7 @@
     <body>
         <div id="app">
             <!-- Sidebar Drawer -->
-            <Sidebar></Sidebar>
+            <sidebar></sidebar>
 
             <!-- Navigation Bar -->
             <navbar :on-settings-click="openSettings"></navbar>
@@ -35,7 +35,7 @@
             </header>
 
             <main>
-                <view-section></view-section>
+                <view-sections></view-sections>
             </main>
 
             <!-- Settings Modal -->
@@ -79,16 +79,16 @@
         <script src="./js/vue/components/Settings/Settings.js"></script>
 
         <!-- Main Components -->
-        <script src="./js/vue/components/Sections/PlaceCategorySection.js"></script>
-        <script src="./js/vue/components/Sections/ExploreHeader.js"></script>
-        <script src="./js/vue/components/Sections/ExploreCardLarge.js"></script>
-        <script src="./js/vue/components/Sections/ExploreCardSmall.js"></script>
-        <script src="./js/vue/components/Sections/ExploreLeftColumn.js"></script>
-        <script src="./js/vue/components/Sections/ExploreRightColumn.js"></script>
+        <script src="./js/vue/components/ViewSections/PlaceCategorySection.js"></script>
+        <script src="./js/vue/components/ViewSections/ExploreHeader.js"></script>
+        <script src="./js/vue/components/ViewSections/ExploreCardLarge.js"></script>
+        <script src="./js/vue/components/ViewSections/ExploreCardSmall.js"></script>
+        <script src="./js/vue/components/ViewSections/ExploreLeftColumn.js"></script>
+        <script src="./js/vue/components/ViewSections/ExploreRightColumn.js"></script>
         <script src="./js/vue/components/Sidebar.js"></script>
         <script src="./js/vue/components/Navbar.js"></script>
         <script src="./js/vue/components/Carousel.js"></script>
-        <script src="./js/vue/components/Section.js"></script>
+        <script src="js/vue/components/ViewSections.js"></script>
         <script src="./js/vue/components/Footer.js"></script>
         <script src="./js/vue/components/Gallery.js"></script>
         <script src="./js/vue/components/ContentOverview.js"></script>
@@ -111,9 +111,9 @@
 
             // Register components
             app.component('navbar', Navbar);
-            app.component('Sidebar', Sidebar);
+            app.component('sidebar', Sidebar);
             app.component('carousel', Carousel);
-            app.component('view-section', ViewSection);
+            app.component('view-sections', ViewSections);
             app.component('settings-modal', Settings);
             app.component('site-footer', Footer);
             app.component('place-category-section', PlaceCategorySection);

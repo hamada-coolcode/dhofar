@@ -27,12 +27,6 @@
 	to { transform: rotate(360deg); }
 }
 
-@keyframes gradient {
-	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
-}
-
 .animate-spin-slow {
 	animation: spin-slow 8s linear infinite;
 }
@@ -98,13 +92,4 @@
 /* Global Styles */
 body {
 	font-family: var(--font-family-body);
-}
-
-/* Explore Section - Theme-aware background */
-[data-theme="light"] .explore-section {
-	background-color: #f0f0f0;
-}
-
-[data-theme="dark"] .explore-section {
-	background-color: #1f2937;
 }

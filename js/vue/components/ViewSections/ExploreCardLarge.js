@@ -21,8 +21,8 @@ const ExploreCardLarge = {
 	},
 	template: `
         <div class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl cursor-pointer h-[160px] sm:h-[200px] lg:h-[380px]">
-            <div class="absolute inset-0 bg-[url('./images/about.webp')] bg-cover bg-center transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/60 via-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 bg-[url('./images/about.webp')] bg-cover bg-center transition-all duration-700 group-hover:scale-110"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/60 via-black/50 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"></div>
             <div class="relative z-10 h-full flex flex-col justify-center p-4 sm:p-5 lg:p-8">
                 <div class="transform transition-all duration-500 group-hover:translate-x-2">
                     <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">

@@ -28,7 +28,7 @@ npx serve .
 ```
 js/vue/components/
   Sidebar.js, Navbar.js, Footer.js    - Layout components
-  Carousel.js, Section.js             - Landing page sections
+  Carousel.js, ViewSections.js             - Landing page sections
   Gallery.js, Card.js                 - Place listing (Gallery has place data)
   ContentOverview.js                   - Category grid for index page
   Settings.js                          - Language/theme modal
