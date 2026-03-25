@@ -310,7 +310,7 @@ const PlacesData = {
                 "./images/reserves/khor-mughsail/2.jpg",
                 "./images/reserves/khor-mughsail/3.jpg",
             ]
-        },www.google.com refus
+        },
         {
             id: 18,
             category: "natural-parks",
