@@ -72,7 +72,7 @@ const PlacesData = {
                 en: "A beautiful park with natural caves, lush trees, and recreational areas for families.",
                 ar: "حديقة جميلة مع كهوف طبيعية وأشجار مورقة ومناطق ترفيهية للعائلات."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Iteen+Park+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3813.630394800492!2d54.062627386474865!3d17.090722441839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd15f00214dae85%3A0xa82f879c3dedab40!2zSXRlZW4gKdin2YTZitiq2YrZhiDYp9mI2YrYsyDYp9mE2KfZhNmC2LHZhtmK!5e0!3m2!1sen!2som!4v1774461875552!5m2!1sen!2som",
             gallery: [
                 "./images/khareef/Iteen/1.jpg",
                 "./images/khareef/Iteen/2.jpg",
@@ -257,7 +257,7 @@ const PlacesData = {
                 en: "A nature reserve home to the endangered Arabian leopard and diverse mountain wildlife.",
                 ar: "محمية طبيعية موطن للنمر العربي المهدد بالانقراض والحياة البرية الجبلية المتنوعة."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Jebel+Samhan+Reserve+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15250.848136915723!2d54.78126526547253!3d17.13554043934749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd30a848e5b0de9%3A0xbf5e333b8ea665c2!2z2KzYqNmEINiz2YXYrdin2YY!5e0!3m2!1sen!2som!4v1774462021185!5m2!1sen!2som",
             gallery: [
                 "./images/reserves/jebel-samhan/1.jpg",
                 "./images/reserves/jebel-samhan/2.jpg",
@@ -310,7 +310,7 @@ const PlacesData = {
                 "./images/reserves/khor-mughsail/2.jpg",
                 "./images/reserves/khor-mughsail/3.jpg",
             ]
-        },
+        },www.google.com refus
         {
             id: 18,
             category: "natural-parks",
@@ -322,7 +322,7 @@ const PlacesData = {
                 en: "A famous frankincense tree reserve, UNESCO World Heritage Site.",
                 ar: "محمية أشجار اللبان الشهيرة، موقع تراث عالمي لليونسكو."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Wadi+Dawkah+Reserve+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.5188464880566!2d54.07434127610698!3d17.33874918354021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd155505f327483%3A0x3e61fa6093a6c92e!2sWadi%20Dawkah!5e0!3m2!1sen!2som!4v1774462546377!5m2!1sen!2som",
             gallery: [
                 "./images/reserves/wadi-dawkah/1.jpg",
                 "./images/reserves/wadi-dawkah/2.jpg",
@@ -399,7 +399,7 @@ const PlacesData = {
                 en: "Ancient archaeological site with ruins dating back centuries.",
                 ar: "موقع أثري قديم مع آثار تعود لقرون."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Al+Baleed+Archaeological+Site+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7630.559801932776!2d54.13223104571022!3d17.009935285257107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd3de4f1856ee23%3A0x4e58ac237f426b33!2sAl%20Balid%2C%20Salalah!5e0!3m2!1sen!2som!4v1774461772149!5m2!1sen!2som",
             gallery: [
                 "./images/ruins/al-baleed/1.jpg",
                 "./images/ruins/al-baleed/2.jpg",
@@ -421,7 +421,7 @@ const PlacesData = {
                 en: "Ancient port city ruins, UNESCO World Heritage Site with rich historical significance.",
                 ar: "آثار مدينة مينائية قديمة، موقع تراث عالمي لليونسكو بأهمية تاريخية غنية."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Sumhuram+Ancient+City+Salalah+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d953.6716419987337!2d54.43304349919739!3d17.039037500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd3bf61d7f94aed%3A0x39a6cb7bac60ebc0!2sSamahram%20Old%20City%20-%20Wilayat%20Taqah!5e0!3m2!1sen!2som!4v1774461554827!5m2!1sen!2som",
             gallery: [
                 "./images/ruins/sumhuram/1.jpg",
                 "./images/ruins/sumhuram/2.jpg",
@@ -442,7 +442,7 @@ const PlacesData = {
                 en: "Archaeological site believed to be the legendary lost city of Ubar.",
                 ar: "موقع أثري يُعتقد أنه مدينة أوبار المفقودة الأسطورية."
             },
-            location: "https://www.google.com/maps/search/?api=1&query=Shisr+Lost+City+Oman",
+            location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3789.0028401049094!2d53.64596662612333!3d18.255691382787187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3dd638cd16bf6aa5%3A0x16f615c2148e2fcc!2sUbar!5e0!3m2!1sen!2som!4v1774460557607!5m2!1sen!2som",
             gallery: [
                 "./images/ruins/shisr-bar/1.jpg",
                 "./images/ruins/shisr-bar/2.jpg",
