@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Beauty of Coasts</title>
+    <title>All Places of Dhofar</title>
 
     <link rel="stylesheet" href="./vendor/daisyui.css">
     <link rel="stylesheet" href="./css/general.css">
@@ -39,7 +39,7 @@
 
         <!-- Places Gallery -->
         <places-gallery
-            category="coasts"
+            category="all"
             @card-click="handleCardClick"
         ></places-gallery>
 
@@ -102,7 +102,7 @@
         },
         computed: {
             pageTitle() {
-                return this.t('pages.coasts.title');
+                return this.t('pages.all.title');
             }
         },
         mounted() {

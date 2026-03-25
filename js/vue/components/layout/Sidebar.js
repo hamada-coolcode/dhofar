@@ -5,6 +5,7 @@ const Sidebar = {
 		return {
 			sidebarItems: [
 				{ key: "nav.home", href: "./index.html", icon: "home" },
+				{ key: "nav.all", href: "./all.html", icon: "grid-3x3" },
 				{ key: "nav.khareef", href: "./khareef.html", icon: "cloud-rain" },
 				{ key: "nav.deserts", href: "./deserts.html", icon: "sun" },
 				{ key: "nav.coasts", href: "./coasts.html", icon: "waves" },

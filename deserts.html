@@ -50,6 +50,8 @@
             @close="selectedPlace = null"
         ></place-details>
     </main>
+
+    <site-footer></site-footer>
 </div>
 
 <!-- i18n -->
@@ -85,6 +87,7 @@
 <script src="./js/vue/components/Sections/ExploreCardSmall.js"></script>
 <script src="./js/vue/components/Sections/ExploreLeftColumn.js"></script>
 <script src="./js/vue/components/Sections/ExploreRightColumn.js"></script>
+<script src="js/vue/components/layout/Footer.js"></script>
 
 <!-- Vue App -->
 <script>
@@ -133,6 +136,7 @@
     app.component('place-details-map', PlaceDetailsMap);
     app.component('place-details-actions', PlaceDetailsActions);
     app.component('places-gallery', PlacesGallery);
+    app.component('site-footer', Footer);
     app.component('explore-header', ExploreHeader);
     app.component('explore-card-large', ExploreCardLarge);
     app.component('explore-card-small', ExploreCardSmall);

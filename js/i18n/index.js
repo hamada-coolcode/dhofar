@@ -22,6 +22,7 @@
         // Navigation
         nav: {
             home: { en: "Home", ar: "الرئيسية" },
+            all: { en: "All Places", ar: "جميع الأماكن" },
             khareef: { en: "Khareef", ar: "الخريف" },
             deserts: { en: "Deserts", ar: "الصحاري" },
             coasts: { en: "Coasts", ar: "السواحل" },
@@ -139,6 +140,9 @@
 
         // Category pages
         pages: {
+            all: {
+                title: { en: "All Places of Dhofar", ar: "جميع أماكن ظفار" },
+            },
             khareef: {
                 title: { en: "The Beauty of Khareef", ar: "جمال الخريف" },
             },
